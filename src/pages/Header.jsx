@@ -1,10 +1,30 @@
 import sky from "../assets/images/sky.jpg";
+import {gsap} from "gsap";
+import { useEffect, useRef } from "react";
 
 const Header = () => {
+  const svgContainerRef = useRef(null);
+
+  useEffect(() => {
+    // Animate on mount
+    gsap.fromTo(
+      svgContainerRef.current,
+      { scale: 0, },
+      {
+        scale: 1,
+        duration: 1,
+        ease: "power3.in",
+        transformOrigin: "center center", // You can change origin
+      }
+    );
+  }, []);
   return (
-    <section className="bg-red-400 h-screen relative">
+    <section className="bg-white h-screen relative">
       {/* Image with SVG mask */}
-      <div className="w-full h-[500px]">
+      <div 
+        ref={svgContainerRef}
+        className="w-full h-[500px] mt-5"
+      >
         <svg 
           viewBox="0 0 1402 743" 
           className="w-full h-full px-6"
