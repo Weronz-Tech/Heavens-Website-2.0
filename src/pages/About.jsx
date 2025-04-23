@@ -28,7 +28,7 @@ const ServiceItem = ({ number, title, description }) => (
   </motion.div>
 );
 
-const AboutUs = () => {
+const About = () => {
   const fadeIn = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
@@ -218,4 +218,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default About;
