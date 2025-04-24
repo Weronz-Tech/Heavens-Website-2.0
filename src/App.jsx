@@ -7,6 +7,7 @@ import About from './pages/About';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import ExploreProperties from './pages/ExploreProperties';
+import PropertyDetails from './pages/PropertyDetails';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/explore-properties" element={<ExploreProperties />} />
+        <Route path="/properties/:id" element={<PropertyDetails />} />
       </Routes>
       <Footer />
     </>
