@@ -97,17 +97,18 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <HiOutlineMail className="text-gold-500 mt-1 mr-3 flex-shrink-0" />
-                <span className="text-gray-400">info@heavensliving.com</span>
+                <span className="text-gray-400">heavensliving.com</span>
               </li>
               <li className="flex items-start">
                 <HiOutlinePhone className="text-gold-500 mt-1 mr-3 flex-shrink-0" />
-                <span className="text-gray-400">+91 98765 43210</span>
+                <span className="text-gray-400">+91 8660796594</span>
               </li>
               <li className="flex items-start">
                 <HiOutlineMapPin className="text-gold-500 mt-1 mr-3 flex-shrink-0" />
                 <span className="text-gray-400">
-                  Flora Inn, Bangalore<br />
-                  Karnataka, India
+                  Flora Inn, Sannidhi Layout,<br />
+                  Bande Nalla Sandra, Anekal<br />
+                  Bangalore, India
                 </span>
               </li>
             </ul>
