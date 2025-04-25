@@ -1,6 +1,7 @@
 import sky from "../assets/images/sky.jpg";
 import {gsap} from "gsap";
 import { useEffect, useRef } from "react";
+import CTA from '../components/CTA'
 
 const Header = () => {
   const svgContainerRef = useRef(null);
@@ -19,6 +20,7 @@ const Header = () => {
     );
   }, []);
   return (
+    <>
     <section className="bg-white h-screen relative">
       {/* Image with SVG mask */}
       <div 
@@ -45,6 +47,8 @@ const Header = () => {
         </svg>
       </div>
     </section>
+    <CTA/>
+  </>
   );
 };
 
