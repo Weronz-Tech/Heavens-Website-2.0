@@ -25,8 +25,8 @@ const CTA = () => {
             <span className="block">Designed for You</span>
           </h2>
           <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-8 md:mb-12 text-white">
-            Whether you're searching for a sanctuary to call home or an investment in timeless value,
-            Heavens Living offers more than just luxury — we offer a lifestyle of significance.
+            Whether you're searching for a sanctuary to call home or a space for meaningful moments,
+            Heavens Living offers more than just luxury — it’s a lifestyle that defines true value.
           </p>
           <Link
             to="/contact"

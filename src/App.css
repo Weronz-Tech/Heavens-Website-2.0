@@ -12,3 +12,9 @@
       100% { opacity: 0; transform: translateY(-10px); }
     }
   }
+  .weronz-gradient-text {
+    background: linear-gradient(to right, #22d3ee, #0f766e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  

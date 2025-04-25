@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { FiFacebook, FiTwitter, FiInstagram, FiLinkedin, FiArrowRight } from 'react-icons/fi';
+import { Link, NavLink } from 'react-router-dom';
+import { FiFacebook, FiInstagram, FiArrowRight, FiPhoneCall } from 'react-icons/fi';
 import { HiOutlineMail, HiOutlinePhone } from 'react-icons/hi';
 import { HiOutlineMapPin } from 'react-icons/hi2';
+import { FaPlaneDeparture } from 'react-icons/fa';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -35,22 +36,35 @@ const Footer = () => {
             animate={hasAnimated ? { y: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-2xl font-light mb-4">
-              <span className="font-serif italic">Heavens</span> Living
+            <h3 className="text-lg font-medium mb-6 text-gold-500">
+              Heavens Living
             </h3>
             <p className="text-gray-400 mb-6 leading-relaxed">
               Crafting exceptional living experiences through timeless design and unparalleled service.
             </p>
             <div className="flex space-x-4">
               {[
-                { icon: <FiFacebook className="w-5 h-5" />, link: "#" },
-                { icon: <FiInstagram className="w-5 h-5" />, link: "#" },
-                { icon: <FiTwitter className="w-5 h-5" />, link: "#" },
-                { icon: <FiLinkedin className="w-5 h-5" />, link: "#" }
+                { icon: <FiFacebook className="w-5 h-5" />, link: "#", title: "Facebook" },
+                {
+                  icon: <FiInstagram className="w-5 h-5" />, link: "https://www.instagram.com/heavensliving?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+                  title: "Instagram"
+                },
+                {
+                  icon: <FiPhoneCall className="w-5 h-5" />,
+                  link: "https://jsdl.in/DT-154KJ7ALJJF",
+                  title: "Justdial"
+                },
+                {
+                  icon: <FaPlaneDeparture className="w-5 h-5" />,
+                  link: "https://www.makemytrip.com/hotels/heavens_living.html",
+                  title: "MakeMyTrip"
+                }
               ].map((social, index) => (
                 <motion.a
                   key={index}
                   href={social.link}
+                  target="_blank"
+                  title={social.title}
                   className="text-gray-400 hover:text-gold-500 transition-colors duration-300"
                   whileHover={{ y: -2 }}
                 >
@@ -70,18 +84,29 @@ const Footer = () => {
             <ul className="space-y-3">
               {[
                 { name: "Properties", link: "/properties" },
-                { name: "Services", link: "/services" },
                 { name: "About Us", link: "/about" },
-                { name: "Testimonials", link: "/testimonials" },
-                { name: "Investment", link: "/investment" }
+                { name: "Blog", link: null, comingSoon: true }, // Blog section with Coming Soon
+                { name: "Testimonials", link: null } // No link for Investment
               ].map((item, index) => (
-                <motion.li key={index} whileHover={{ x: 5 }}>
-                  <Link
-                    to={item.link}
-                    className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center"
-                  >
-                    <FiArrowRight className="mr-2 w-3 h-3" /> {item.name}
-                  </Link>
+                <motion.li key={index}>
+                  {item.link ? (
+                    <NavLink
+                      to={item.link}
+                      className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center"
+                      activeClassName="text-white" // Active link style
+                    >
+                      <FiArrowRight className="mr-2 w-3 h-3" /> {item.name}
+                    </NavLink>
+                  ) : (
+                    <span className="text-gray-400 flex items-center">
+                      <FiArrowRight className="mr-2 w-3 h-3" /> {item.name}
+                      {item.comingSoon && (
+                        <span className="ml-2 text-yellow-500 text-xs font-semibold border py-1 px-2 rounded-full">
+                          Coming Soon
+                        </span>
+                      )}
+                    </span>
+                  )}
                 </motion.li>
               ))}
             </ul>
@@ -97,7 +122,7 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <HiOutlineMail className="text-gold-500 mt-1 mr-3 flex-shrink-0" />
-                <span className="text-gray-400">heavensliving.com</span>
+                <span className="text-gray-400">heavensliving@gmail.com</span>
               </li>
               <li className="flex items-start">
                 <HiOutlinePhone className="text-gold-500 mt-1 mr-3 flex-shrink-0" />
@@ -114,37 +139,38 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Newsletter */}
+          {/* Crafted by Weronz Tech */}
           <motion.div
             initial={{ y: 20 }}
             animate={hasAnimated ? { y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <h4 className="text-lg font-medium mb-6 text-gold-500">Stay Updated</h4>
-            <p className="text-gray-400 mb-4">
-              Subscribe to our newsletter for exclusive property updates and investment opportunities.
+            <h4 className="text-lg font-medium mb-6 text-gold-500">Crafted With Passion</h4>
+            <p className="text-gray-400  leading-relaxed text-sm">
+              This experience is proudly designed and developed
+              <br />
+              <span className="weronz-gradient-text font-bold text-base">Weronz Tech</span> —
+              A passionate team crafting innovative user experiences.
             </p>
-            <form className="flex">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="px-4 py-3 w-full rounded-l-lg focus:outline-none focus:ring-2 focus:ring-gold-500 text-gray-900"
-              />
-              <button
-                type="submit"
-                className="bg-gold-500 hover:bg-gold-600 text-white px-4 rounded-r-lg transition-colors duration-300"
-              >
-                <FiArrowRight className="w-5 h-5" />
-              </button>
-            </form>
+            <em className='text-gray-400 mb-4 leading-relaxed text-sm'>“We transform your ideas into unique web projects that inspire both you and your customers”</em> <br />
+            <a
+              href="https://www.weronz.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block text-white text-xs px-4 py-2 mt-2 rounded-full font-semibold shadow-md bg-gray-700 hover:bg-gray-600 transition duration-300 ease-in-out"
+            >
+              Visit Weronz Tech
+            </a>
           </motion.div>
+
         </div>
 
         {/* Divider */}
         <div className="border-t border-gray-800 my-8"></div>
 
         {/* Bottom Footer */}
-        <div className="flex flex-col md:flex-row justify-between items-center">
+        <div className="flex flex-col md:flex-row justify-center items-center">
+
           <motion.p
             className="text-gray-500 text-sm mb-4 md:mb-0"
             initial={{ opacity: 0 }}
@@ -153,23 +179,6 @@ const Footer = () => {
           >
             &copy; {currentYear} Heavens Living. All rights reserved.
           </motion.p>
-
-          <motion.div
-            className="flex space-x-6"
-            initial={{ opacity: 0 }}
-            animate={hasAnimated ? { opacity: 1 } : {}}
-            transition={{ duration: 0.6, delay: 0.5 }}
-          >
-            <Link to="/privacy" className="text-gray-500 hover:text-white text-sm transition-colors duration-300">
-              Privacy Policy
-            </Link>
-            <Link to="/terms" className="text-gray-500 hover:text-white text-sm transition-colors duration-300">
-              Terms of Service
-            </Link>
-            <Link to="/cookies" className="text-gray-500 hover:text-white text-sm transition-colors duration-300">
-              Cookie Policy
-            </Link>
-          </motion.div>
         </div>
       </div>
     </motion.footer>

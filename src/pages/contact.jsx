@@ -169,7 +169,7 @@ const ContactUs = () => {
                                 transition={{ duration: 1, delay: 0.6 }}
                             >
                                 <Link
-                                    to="/explore-properties"
+                                    to="/properties"
                                     className="group inline-flex items-center text-gold-600 hover:text-gold-800 transition-colors duration-300 text-base md:text-lg"
                                 >
                                     Explore Our Properties

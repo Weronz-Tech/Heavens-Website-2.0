@@ -3,11 +3,12 @@ import { useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { FiMapPin, FiPhone, FiShare2, FiLink } from 'react-icons/fi';
-import { FaWhatsapp, FaFacebook } from 'react-icons/fa';
+import { FaWhatsapp, FaFacebook, FaMale, FaFemale } from 'react-icons/fa';
 import Modal from 'react-modal';
 import { properties } from '../utils/properties';
 import PropertyCarousel from '../components/PropertyCarousel';
 import CTA from '../components/CTA';
+import MarqueeRow from '../components/MarqueeRow';
 
 Modal.setAppElement('#root');
 
@@ -52,6 +53,19 @@ const PropertyDetails = () => {
         window.open(`tel:${property.contact.phone}`);
     };
 
+    const mixedItems = property.amenities
+        .map((amenity) => ({
+            type: 'amenity',
+            data: amenity,
+        }))
+        .concat(
+            property.services.map((service) => ({
+                type: 'service',
+                data: service,
+            }))
+        )
+        .sort((a, b) => a.data.name.localeCompare(b.data.name));
+
     return (
         <>
             <motion.div
@@ -71,9 +85,24 @@ const PropertyDetails = () => {
                             variants={itemVariants}
                             className="flex justify-between items-center"
                         >
-                            <h1 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900">
-                                {property.name}
-                            </h1>
+                            {/* Name and PreferredBy Tag */}
+                            <div className="flex items-center gap-3 flex-wrap">
+                                <h1 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900">
+                                    {property.name}
+                                </h1>
+
+                                {property.preferredBy === 'Boys' ? (
+                                    <span className="flex items-center bg-blue-500 text-white px-2 py-1 rounded-full text-sm font-medium">
+                                        <FaMale className="w-4 h-4" />
+                                        Preferred by Boys
+                                    </span>
+                                ) : (
+                                    <span className="flex items-center bg-pink-500 text-white px-2 py-1 rounded-full text-sm font-medium">
+                                        <FaFemale className="w-4 h-4" />
+                                        Preferred by Girls
+                                    </span>
+                                )}
+                            </div>
 
                             {/* Share Button */}
                             <motion.div
@@ -354,28 +383,24 @@ const PropertyDetails = () => {
                         transition={{ duration: 0.5 }}
                         className="container mx-auto mb-16"
                     >
-                        {/* Centered Heading – Living Amenities & Services */}
+                        {/* 🔹 Centered Heading */}
                         <div className="text-center mb-12">
                             <h2 className="text-3xl font-light text-gray-900">
                                 Living Amenities & Services
                             </h2>
                         </div>
 
-                        {/* Mixed Amenities and Services (Interleaved) */}
-                        <div className="flex flex-wrap gap-4">
-                            {property.amenities
-                                .map((amenity, index) => ({
-                                    type: 'amenity',
-                                    data: amenity
-                                }))
-                                .concat(
-                                    property.services.map((service, index) => ({
-                                        type: 'service',
-                                        data: service
-                                    }))
-                                )
-                                .sort((a, b) => a.data.name.localeCompare(b.data.name)) // Optional: sort alphabetically
-                                .map((item, index) => {
+                        {/* 🔹 Mixed Amenities and Services */}
+                        <div>
+                            {/* 🔸 Mobile: Marquee-style horizontal scroll in 2 rows */}
+                            <div className="block md:hidden space-y-3">
+                                <MarqueeRow items={mixedItems.slice(0, Math.ceil(mixedItems.length / 2))} />
+                                <MarqueeRow items={mixedItems.slice(Math.ceil(mixedItems.length / 2))} />
+                            </div>
+
+                            {/* 🔸 Desktop: Original flex-wrap layout */}
+                            <div className="hidden md:flex md:flex-wrap gap-4">
+                                {mixedItems.map((item, index) => {
                                     const isAmenity = item.type === 'amenity';
                                     const classes = isAmenity
                                         ? 'bg-gray-50 border border-gray-200 text-gray-700'
@@ -391,6 +416,7 @@ const PropertyDetails = () => {
                                         </div>
                                     );
                                 })}
+                            </div>
                         </div>
                     </motion.section>
 
