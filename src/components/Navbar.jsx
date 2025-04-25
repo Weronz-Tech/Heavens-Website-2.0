@@ -35,9 +35,8 @@ const Navbar = () => {
         className="relative group inline-block transition-transform duration-300 ease-out"
       >
         <span
-          className={`text-black transition-colors duration-300 ${
-            isActive ? 'font-bold' : 'font-semibold'
-          }`}
+          className={`text-black transition-colors duration-300 ${isActive ? 'font-bold' : 'font-semibold'
+            }`}
         >
           {children}
         </span>
@@ -76,7 +75,7 @@ const Navbar = () => {
           <div className="space-x-8 hidden md:flex items-center">
             <MagneticNavLink to="/">Home</MagneticNavLink>
             <MagneticNavLink to="/about">About</MagneticNavLink>
-            <MagneticNavLink to="/services">Services</MagneticNavLink>
+            <MagneticNavLink to="/explore-properties">Explore</MagneticNavLink>
             <MagneticNavLink to="/contact">Contact</MagneticNavLink>
             <span className="bg-black p-2 px-3 rounded-full font-semibold text-white">
               Book Now
@@ -105,7 +104,7 @@ const Navbar = () => {
           </button>
           <MagneticNavLink to="/">Home</MagneticNavLink>
           <MagneticNavLink to="/about">About</MagneticNavLink>
-          <MagneticNavLink to="/services">Services</MagneticNavLink>
+          <MagneticNavLink to="/explore-properties">Explore</MagneticNavLink>
           <MagneticNavLink to="/contact">Contact</MagneticNavLink>
           <span className="bg-black p-2 px-3 rounded-full font-semibold text-white w-fit">
             Book Now
