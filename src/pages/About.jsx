@@ -140,7 +140,7 @@ const About = () => {
       {/* Philosophy Section */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 md:px-12">
-          <div className="max-w-4xl mx-auto text-center mb-12 md:mb-20">
+          <div className="max-w-4xl mx-auto md:text-center mb-12 md:mb-20">
             <motion.div
               className="text-gold-500 mb-3 md:mb-4 uppercase tracking-wider text-xs md:text-sm font-medium"
               {...fadeIn}
@@ -201,7 +201,7 @@ const About = () => {
       </section>
 
       {/* Signature Services */}
-      <section className="py-16 md:py-24 bg-cream-100">
+      <section className="bg-cream-100">
         <div className="container mx-auto px-4 sm:px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16">
             {/* Left Column */}
@@ -255,7 +255,7 @@ const About = () => {
         </div>
       </section>
 
-      <section id="testimonials" className="bg-white overflow-hidden mb-20">
+      <section id="testimonials" className="bg-white overflow-hidden mb-20 mt-20">
         <div className="container mx-auto px-4 sm:px-6 md:px-12">
           {/* Heading */}
           <motion.div
