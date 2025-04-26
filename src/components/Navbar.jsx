@@ -95,14 +95,14 @@ const Navbar = () => {
   return (
     <>
       {/* Navbar Top */}
-      <div className="bg-opacity-0 p-4 fixed top-0 left-0 right-0 z-50 px-6 mt-3">
+      <div className="bg-opacity-0 p-4 fixed top-0 left-0 right-0 z-50 md:px-6 px-2 mt-3">
         <div className="flex items-center justify-between">
           <Link to="/" className="z-10">
             <img src={logo} alt="Heavens Living Logo" className="h-6 w-auto" />
           </Link>
 
           {/* Desktop Nav */}
-          <div className="space-x-8 hidden md:flex items-center">
+          <div className="space-x-[80px] hidden md:flex items-center">
             <MagneticNavLink to="/">Home</MagneticNavLink>
             <MagneticNavLink to="/about">About</MagneticNavLink>
             <MagneticNavLink to="/properties">Explore</MagneticNavLink>
