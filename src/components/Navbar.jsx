@@ -105,7 +105,7 @@ const Navbar = () => {
           <div className="space-x-8 hidden md:flex items-center">
             <MagneticNavLink to="/">Home</MagneticNavLink>
             <MagneticNavLink to="/about">About</MagneticNavLink>
-            <MagneticNavLink to="/explore-properties">Explore</MagneticNavLink>
+            <MagneticNavLink to="/properties">Explore</MagneticNavLink>
             <MagneticNavLink to="/contact">Contact</MagneticNavLink>
             <span className="bg-black p-2 px-3 rounded-full font-semibold text-white">
               Book Now
