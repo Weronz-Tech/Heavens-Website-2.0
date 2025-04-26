@@ -10,6 +10,9 @@ const PropertyCarousel = ({ property }) => {
     return (
         <>
             <Carousel
+                autoPlay
+                interval={4000}
+                stopOnHover
                 showThumbs={true}
                 showStatus={false}
                 infiniteLoop

@@ -86,7 +86,7 @@ const Footer = () => {
                 { name: "Properties", link: "/properties" },
                 { name: "About Us", link: "/about" },
                 { name: "Blog", link: null, comingSoon: true }, // Blog section with Coming Soon
-                { name: "Testimonials", link: null } // No link for Investment
+                { name: "Testimonials", link: "/about#testimonials" } // Link to Testimonials section
               ].map((item, index) => (
                 <motion.li key={index}>
                   {item.link ? (

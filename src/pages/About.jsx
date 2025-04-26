@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { HiArrowUpRight } from 'react-icons/hi2';
@@ -13,7 +13,7 @@ const ServiceItem = ({ number, title, description }) => (
     viewport={{ once: true, margin: "-50px" }}
     transition={{ duration: 0.6 }}
   >
-    <Link to="#" className="block">
+    <Link to="/properties" className="block">
       <div className="flex items-start justify-between group-hover:opacity-75 transition-opacity duration-300">
         <div className="flex-1">
           <div className="text-gold-500 mb-1 md:mb-2 font-mono text-xs md:text-sm tracking-wider">{number}</div>
@@ -36,6 +36,21 @@ const ServiceItem = ({ number, title, description }) => (
 );
 
 const About = () => {
+
+  useEffect(() => {
+    // Handle scroll to testimonials if URL has hash
+    if (window.location.hash === '#testimonials') {
+      const testimonialsSection = document.getElementById('testimonials');
+      if (testimonialsSection) {
+        setTimeout(() => {
+          testimonialsSection.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }, 100); // Small delay to ensure page is loaded
+      }
+    }
+  }, []);
+
   const fadeIn = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
@@ -232,17 +247,17 @@ const About = () => {
               />
               <ServiceItem
                 number="03"
-                title="Investment Opportunities"
-                description="Partner with us for exclusive real estate investments in prime locations, backed by our reputation for excellence and value appreciation."
+                title="Bespoke Interior Design"
+                description="Transform your residence into a masterpiece with our personalized interior design services, curated to reflect your unique taste and lifestyle."
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonial Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section id="testimonials" className="bg-white overflow-hidden mb-20">
         <div className="container mx-auto px-4 sm:px-6 md:px-12">
+          {/* Heading */}
           <motion.div
             className="max-w-4xl mx-auto text-center mb-12 md:mb-16"
             initial={{ opacity: 0 }}
@@ -250,51 +265,103 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="text-gold-500 mb-3 md:mb-4 uppercase tracking-wider text-xs md:text-sm font-medium">Testimonials</div>
+            <div className="text-gold-500 mb-3 md:mb-4 uppercase tracking-wider text-xs md:text-sm font-medium">
+              Testimonials
+            </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-4 md:mb-6 text-gray-900">
-              <span className="font-serif italic">Voices</span> of Our <span className="font-serif italic">Residents</span>
+              <span className="font-serif italic">Voices</span> of Our{" "}
+              <span className="font-serif italic">Residents</span>
             </h2>
           </motion.div>
 
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto"
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-          >
-            {[
-              {
-                quote: "Living in a Heavens Living property has been transformative. The attention to detail in every corner of my home makes each day feel special.",
-                author: "Sarah J.",
-                role: "Resident since 2020"
-              },
-              {
-                quote: "As an investor, I've found Heavens Living properties consistently appreciate in value while maintaining the highest standards of luxury.",
-                author: "Michael T.",
-                role: "Investor Partner"
-              }
-            ].map((testimonial, index) => (
-              <motion.div
-                key={index}
-                className="bg-cream-50 p-6 md:p-8 rounded-lg md:rounded-xl"
-                variants={fadeIn}
-                whileHover={{ y: -5 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <div className="text-gold-500 text-3xl md:text-4xl mb-3 md:mb-4">"</div>
-                <p className="text-gray-600 text-sm md:text-base lg:text-lg italic mb-4 md:mb-6 leading-relaxed">
-                  {testimonial.quote}
-                </p>
-                <div className="border-t border-cream-200 pt-4 md:pt-6">
-                  <h4 className="font-medium text-gray-800 text-base md:text-lg">{testimonial.author}</h4>
-                  <p className="text-gray-500 text-xs md:text-sm">{testimonial.role}</p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+          {/* Continuous auto-scrolling testimonials */}
+          <div className="relative overflow-hidden">
+            <div className="flex w-max animate-marquee">
+              {/* Repeat reviews twice for infinite smooth loop */}
+              {[...Array(2)].flatMap((_, repeatIndex) =>
+                [
+                  {
+                    quote:
+                      "Living in a Heavens Living property has been transformative. The attention to detail in every corner of my home makes each day feel special.",
+                    author: "Sarah J.",
+                    role: "Resident since 2020",
+                  },
+                  {
+                    quote:
+                      "I've lived in many places, but nothing compares to the service and serenity I’ve experienced at Heavens Living.",
+                    author: "Ravi N.",
+                    role: "Resident since 2021",
+                  },
+                  {
+                    quote:
+                      "Excellent staff, beautiful interiors, and peaceful surroundings. Couldn't ask for more.",
+                    author: "Sneha P.",
+                    role: "Resident since 2022",
+                  },
+                  {
+                    quote:
+                      "Top-tier maintenance and thoughtful design. Every detail feels luxurious and personal.",
+                    author: "Arjun V.",
+                    role: "Resident since 2023",
+                  },
+                ].map((review, index) => (
+                  <div
+                    key={`${repeatIndex}-${index}`}
+                    className="bg-cream-50 rounded-xl shadow-sm w-[300px] p-6 mx-2 flex-shrink-0"
+                  >
+                    <div className="flex items-center mb-4">
+                      <img
+                        src={`https://i.pravatar.cc/150?img=${index + repeatIndex * 4 + 10}`}
+                        alt={review.author}
+                        className="w-10 h-10 rounded-full mr-3"
+                      />
+                      <div>
+                        <h4 className="font-medium text-gray-800 text-sm">{review.author}</h4>
+                        <p className="text-gray-500 text-xs">{review.role}</p>
+                      </div>
+                    </div>
+                    <div className="flex text-yellow-400 text-sm mb-3">
+                      {[...Array(5)].map((_, i) => (
+                        <span key={i}>★</span>
+                      ))}
+                    </div>
+                    <p className="text-gray-600 text-sm italic leading-relaxed">{review.quote}</p>
+                  </div>
+                ))
+              )}
+            </div>
+          </div>
+
+          {/* Google Reviews Button */}
+          <div className="text-center mt-12">
+            <a
+              href="https://www.google.com/maps/place/Heavens+Living+-+Flora+Inn/@12.7894847,77.6509629,17z/data=!4m8!3m7!1s0x3bae6b102129bec7:0x269e46f969a347c0!8m2!3d12.7894847!4d77.6509629!9m1!1b1!16s%2Fg%2F11w_v1ccvf?entry=ttu&g_ep=EgoyMDI1MDQyMy4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center text-gold-600 hover:text-gold-800 transition-colors duration-300 text-base md:text-lg"
+            >
+              Read More on Google Reviews
+              <HiArrowUpRight className="ml-2 w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+            </a>
+          </div>
+
         </div>
+
+        {/* Marquee animation */}
+        <style>
+          {`
+          @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .animate-marquee {
+            display: flex;
+            animation: marquee 40s linear infinite;
+          }
+        `}
+        </style>
       </section>
+
       <CTA />
     </div>
   );
