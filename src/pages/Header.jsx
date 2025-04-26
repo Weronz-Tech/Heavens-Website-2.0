@@ -1,54 +1,82 @@
-import sky from "../assets/images/sky.jpg";
-import {gsap} from "gsap";
-import { useEffect, useRef } from "react";
-import CTA from '../components/CTA'
+import CTA from '../components/CTA';
+import video from '../assets/videos/heavens-video.mp4';
+import { useRef } from 'react';
 
 const Header = () => {
-  const svgContainerRef = useRef(null);
 
-  useEffect(() => {
-    // Animate on mount
-    gsap.fromTo(
-      svgContainerRef.current,
-      { scale: 0, },
-      {
-        scale: 1,
-        duration: 1,
-        ease: "power3.in",
-        transformOrigin: "center center", // You can change origin
-      }
+  const MagneticButton = ({ children, onClick, className }) => {
+    const buttonRef = useRef(null);
+  
+    const handleMouseMove = (e) => {
+      const button = buttonRef.current;
+      const rect = button.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      button.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+    };
+  
+    const handleMouseLeave = () => {
+      const button = buttonRef.current;
+      button.style.transform = "translate(0px, 0px)";
+    };
+  
+    return (
+      <button
+        ref={buttonRef}
+        onClick={onClick}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        className={`relative inline-block transition-transform duration-300 ease-out ${className}`}
+      >
+        {children}
+      </button>
     );
-  }, []);
+  };
+
+  
   return (
     <>
-    <section className="bg-white h-screen relative">
-      {/* Image with SVG mask */}
-      <div 
-        ref={svgContainerRef}
-        className="w-full h-[500px] mt-5"
-      >
-        <svg 
-          viewBox="0 0 1402 743" 
-          className="w-full h-full px-6"
-          preserveAspectRatio="none"
-        >
-          <defs>
-            <clipPath id="svg-mask">
-              <path fill="white" d="M0 35C0 15.67 15.67 0 35 0H811.899C818.498 0 824.963 1.86569 830.548 5.38184L948.452 79.6181C954.037 83.1343 960.502 85 967.101 85H1367C1386.33 85 1402 100.67 1402 120V708C1402 727.33 1386.33 743 1367 743L590.101 743C583.502 743 577.037 741.134 571.452 737.618L453.548 663.382C447.963 659.866 441.498 658 434.899 658L31.5385 658C16.447 658 2.55038 648.348 0.822042 633.356C0.279069 628.646 0 623.855 0 619V35Z"/>
-            </clipPath>
-          </defs>
-          <image 
-            href={sky} 
-            width="100%" 
-            height="100%" 
-            preserveAspectRatio="xMidYMid slice"
-            clipPath="url(#svg-mask)"
+      <section className="bg-white h-screen relative overflow-hidden">
+        {/* Video Background */}
+        <div className="absolute inset-0 z-0">
+          <video
+            className="w-full h-full object-cover rotate-[-90deg]"
+            src={video}
+            autoPlay
+            loop
+            muted
+            playsInline
           />
-        </svg>
-      </div>
-    </section>
-    <CTA/>
-  </>
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#101828] to-transparent"></div>
+        </div>
+
+        {/* Content on top of video */}
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-white text-center px-4">
+          <h2
+            className="text-2xl md:text-4xl font-semibold"
+            style={{ fontFamily: 'Playfair Display, serif' }}
+          >
+            Where <span className="italic">Luxury</span> Meets
+          </h2>
+          <h1
+            className="text-4xl md:text-6xl font-semibold mt-2 italic"
+            style={{ fontFamily: 'Playfair Display, serif' }}
+          >
+            Heavenly Living
+          </h1>
+
+          {/* Book Now Button */}
+          <MagneticButton
+            className="mt-14 px-8 py-3 bg-transparent border border-white text-white font-semibold rounded-full shadow-md hover:bg-white hover:text-[#101828] transition-all duration-300"
+          >
+            Book Now
+          </MagneticButton>
+        </div>
+      </section>
+
+      <CTA />
+    </>
   );
 };
 

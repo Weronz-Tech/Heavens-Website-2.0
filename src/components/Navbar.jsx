@@ -68,13 +68,13 @@ const Navbar = () => {
         className="relative group inline-block transition-transform duration-300 ease-out"
       >
         <span
-          className={`text-black transition-colors duration-300 ${
+          className={`text-white transition-colors duration-300 ${
             isActive ? "font-bold" : "font-semibold"
           }`}
         >
           {children}
         </span>
-        <span className="absolute left-1/2 -bottom-3 transform -translate-x-1/2 w-2 h-2 bg-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <span className="absolute left-1/2 -bottom-3 transform -translate-x-1/2 w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </Link>
     );
   };
@@ -95,7 +95,7 @@ const Navbar = () => {
   return (
     <>
       {/* Navbar Top */}
-      <div className="bg-opacity-0 p-4 fixed top-0 left-0 right-0 z-50 px-10 mt-3">
+      <div className="bg-opacity-0 p-4 fixed top-0 left-0 right-0 z-50 px-6 mt-3">
         <div className="flex items-center justify-between">
           <Link to="/" className="z-10">
             <img src={logo} alt="Heavens Living Logo" className="h-6 w-auto" />
@@ -107,9 +107,6 @@ const Navbar = () => {
             <MagneticNavLink to="/about">About</MagneticNavLink>
             <MagneticNavLink to="/properties">Explore</MagneticNavLink>
             <MagneticNavLink to="/contact">Contact</MagneticNavLink>
-            <span className="bg-black p-2 px-3 rounded-full font-semibold text-white">
-              Book Now
-            </span>
           </div>
 
           {/* Hamburger Button for Mobile */}
@@ -191,7 +188,7 @@ const Navbar = () => {
       {/* Sidebar Background Blur */}
       {sidebarOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"
+          className="fixed inset-0 bg-opacity-50 z-30 md:hidden"
           onClick={toggleSidebar}
         />
       )}
