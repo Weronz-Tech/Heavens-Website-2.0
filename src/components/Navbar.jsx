@@ -68,13 +68,13 @@ const Navbar = () => {
         className="relative group inline-block transition-transform duration-300 ease-out"
       >
         <span
-          className={`text-white transition-colors duration-300 ${
+          className={`text-[#631930] transition-colors duration-300 ${
             isActive ? "font-bold" : "font-semibold"
           }`}
         >
           {children}
         </span>
-        <span className="absolute left-1/2 -bottom-3 transform -translate-x-1/2 w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <span className="absolute left-1/2 -bottom-3 transform -translate-x-1/2 w-2 h-2 bg-[#631930] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </Link>
     );
   };

@@ -155,7 +155,7 @@ const ExploreProperties = () => {
                             Luxury Living
                         </div>
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-6 md:mb-8 text-gray-900">
-                            <span className="font-serif italic">Discover</span> Our Exclusive Properties
+                            <span className="font-serif italic text-[#631930]">Discover</span> Our Exclusive Properties
                         </h2>
                     </motion.div>
 

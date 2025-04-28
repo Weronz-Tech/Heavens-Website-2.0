@@ -145,7 +145,7 @@ const ContactUs = () => {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.8, delay: 0.2 }}
                             >
-                                <span className="block font-serif italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl">Connect</span>
+                                <span className="block font-serif italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#631930]">Connect</span>
                                 <span className="block">With</span>
                                 <span className="block">Heavens Living</span>
                                 <span className="block">We’re Here for You</span>

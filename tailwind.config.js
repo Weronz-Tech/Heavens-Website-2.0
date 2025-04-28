@@ -7,10 +7,11 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Poppins', 'sans-serif'], 
+        sans: ['Poppins', 'sans-serif'],
       },
       colors: {
         customGray: '#1A1A1A',
+        logoClr: '#631930'
       },
     },
   },

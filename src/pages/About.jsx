@@ -14,10 +14,10 @@ const ServiceItem = ({ number, title, description }) => (
     transition={{ duration: 0.6 }}
   >
     <Link to="/properties" className="block">
-      <div className="flex items-start justify-between group-hover:opacity-75 transition-opacity duration-300">
+      <div className="flex items-start justify-between transition-opacity duration-300">
         <div className="flex-1">
           <div className="text-gold-500 mb-1 md:mb-2 font-mono text-xs md:text-sm tracking-wider">{number}</div>
-          <h3 className="text-2xl md:text-3xl lg:text-4xl font-medium text-gray-800 group-hover:text-gold-500 transition-colors duration-500">
+          <h3 className="text-2xl md:text-3xl lg:text-4xl font-medium text-gray-800 group-hover:text-[#631930] transition-colors duration-500">
             {title}
           </h3>
           <p className="mt-2 md:mt-4 text-gray-500 max-w-2xl leading-relaxed text-sm md:text-base">
@@ -25,7 +25,7 @@ const ServiceItem = ({ number, title, description }) => (
           </p>
         </div>
         <motion.div
-          className="text-gray-300 group-hover:text-gold-500 transition-colors duration-500 flex items-center ml-4"
+          className="text-gray-300 group-hover:text-gold-500 transition-colors duration-500 hover:text-[#631930] flex items-center ml-4"
           whileHover={{ x: 5 }}
         >
           <FiChevronRight className="w-6 h-6 md:w-8 md:h-8" />
@@ -98,7 +98,7 @@ const About = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <span className="block font-serif italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl">Elevating</span>
+                <span className="block font-serif italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#631930]">Elevating</span>
                 <span className="block">Luxury Living</span>
                 <span className="block">To Divine</span>
                 <span className="block">Perfection</span>
@@ -152,7 +152,7 @@ const About = () => {
               {...fadeIn}
               transition={{ delay: 0.2 }}
             >
-              Where <span className="font-serif italic">Elegance</span> Meets <span className="font-serif italic">Essence</span>
+              Where <span className="font-serif italic text-[#631930]">Elegance</span> Meets <span className="font-serif italic text-[#631930]">Essence</span>
             </motion.h2>
             <motion.p
               className="text-gray-500 text-base md:text-lg leading-relaxed"
@@ -217,7 +217,7 @@ const About = () => {
                 {...fadeIn}
                 transition={{ delay: 0.2 }}
               >
-                <span className="font-serif italic">Exceptional</span> Experiences, <span className="font-serif italic">Tailored</span> For You
+                <span className="font-serif italic text-[#631930]">Exceptional</span> Experiences, <span className="font-serif italic text-[#631930]">Tailored</span> For You
               </motion.h2>
 
               {/* Luxury Illustration */}
@@ -269,8 +269,8 @@ const About = () => {
               Testimonials
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-4 md:mb-6 text-gray-900">
-              <span className="font-serif italic">Voices</span> of Our{" "}
-              <span className="font-serif italic">Residents</span>
+              <span className="font-serif italic text-[#631930]">Voices</span> of Our{" "}
+              <span className="font-serif italic text-[#631930]">Residents</span>
             </h2>
           </motion.div>
 

@@ -1,24 +1,39 @@
 @import "tailwindcss";
 
 @layer utilities {
-    .animate-fade-in {
-      animation: fadeInOut 2s ease-in-out;
+  .animate-fade-in {
+    animation: fadeInOut 2s ease-in-out;
+  }
+
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
     }
-  
-    @keyframes fadeInOut {
-      0% { opacity: 0; transform: translateY(-10px); }
-      10% { opacity: 1; transform: translateY(0); }
-      90% { opacity: 1; transform: translateY(0); }
-      100% { opacity: 0; transform: translateY(-10px); }
+
+    10% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    90% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateY(-10px);
     }
   }
-  .weronz-gradient-text {
-    background: linear-gradient(to right, #22d3ee, #0f766e);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  html {
-    scroll-behavior: smooth;
-  }
-  
+}
+
+.weronz-gradient-text {
+  background: linear-gradient(to right, #22d3ee, #0f766e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
