@@ -4,6 +4,12 @@ import { Link } from 'react-router-dom';
 import { HiArrowUpRight } from 'react-icons/hi2';
 import { FiChevronRight } from 'react-icons/fi';
 import CTA from '../components/CTA'
+import img1 from "../assets/images/img1.png";
+import img2 from "../assets/images/img2.png";
+import img3 from "../assets/images/img3.png";
+import img4 from "../assets/images/img4.png";
+import img5 from "../assets/images/img5.png";
+import img6 from "../assets/images/img6.png";
 
 const ServiceItem = ({ number, title, description }) => (
   <motion.div
@@ -282,27 +288,45 @@ const About = () => {
                 [
                   {
                     quote:
-                      "Living in a Heavens Living property has been transformative. The attention to detail in every corner of my home makes each day feel special.",
-                    author: "Sarah J.",
-                    role: "Resident since 2020",
+                      "I’m really happy with my stay at Heavens Living - Flora Inn and I’m really impressed with the experience. The PG has a warm and welcoming ambiance, making it feel like a home away from home. The rooms are clean and comfortable, and the staff is friendly and always ready to assist. The food is good, and the overall environment is peaceful and relaxed. It’s a great option for anyone looking for a reliable PG in Bangalore. Looking forward to seeing it grow even more!",
+                    author: "Nikhil Babu",
+                    role: "2 months ago",
+                    img: `${img1}`
                   },
                   {
                     quote:
-                      "I've lived in many places, but nothing compares to the service and serenity I’ve experienced at Heavens Living.",
-                    author: "Ravi N.",
-                    role: "Resident since 2021",
+                      "Their spacious suite is the main attraction along with secure setting.  There is a security at night.Jigani Side's best mess meal.I always feel as though I'm at home as well as staff members behaved politely.",
+                    author: "Honey",
+                    role: "a month ago",
+                    img: `${img2}`
                   },
                   {
                     quote:
-                      "Excellent staff, beautiful interiors, and peaceful surroundings. Couldn't ask for more.",
-                    author: "Sneha P.",
-                    role: "Resident since 2022",
+                      "A place to stay! Highly satisfied with my stay. The PG is clean, well-maintained, and provides all the necessary amenities. The management is friendly and responsive. Highly recommended!",
+                    author: "Manu Alex",
+                    role: "Manu Alex",
+                    img: `${img3}`
                   },
                   {
                     quote:
-                      "Top-tier maintenance and thoughtful design. Every detail feels luxurious and personal.",
-                    author: "Arjun V.",
-                    role: "Resident since 2023",
+                      "I had an amazing stay at Heavens Living Flora Inn ( Gents PG), The location is perfect—just near to HCL Tech. The Rooms and Dining area are clean, comfortable, and well-maintained.",
+                    author: "Anwar Sadath",
+                    role: "2 months ago",
+                    img: `${img4}`
+                  },
+                  {
+                    quote:
+                      "I’ve been staying at Heavens Living PG for a while, and the food is one of the best things about this place! The meals are fresh, hygienic, and have a good mix of variety, covering both North and South Indian cuisines. The taste is home-like, and they make sure there’s a balance between nutrition and flavor.",
+                    author: "Saleel Mohammed",
+                    role: "2 months ago",
+                    img: `${img5}`
+                  },
+                  {
+                    quote:
+                      "Best pg in jigani bommasandra. They provide best food with top quality. It is near to hcl gate no 2. If you are looking for pg go for heavens living",
+                    author: "United Educators",
+                    role: "a month ago",
+                    img: `${img6}`
                   },
                 ].map((review, index) => (
                   <div
@@ -311,7 +335,7 @@ const About = () => {
                   >
                     <div className="flex items-center mb-4">
                       <img
-                        src={`https://i.pravatar.cc/150?img=${index + repeatIndex * 4 + 10}`}
+                        src={review.img}
                         alt={review.author}
                         className="w-10 h-10 rounded-full mr-3"
                       />
@@ -325,7 +349,9 @@ const About = () => {
                         <span key={i}>★</span>
                       ))}
                     </div>
-                    <p className="text-gray-600 text-sm italic leading-relaxed">{review.quote}</p>
+                    <p className="text-gray-600 text-sm italic leading-relaxed">
+                      {review.quote.length > 110 ? review.quote.slice(0, 110) + '...' : review.quote}
+                    </p>
                   </div>
                 ))
               )}

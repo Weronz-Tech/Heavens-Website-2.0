@@ -168,7 +168,7 @@ const Header = () => {
           >
             <motion.h2
               variants={clipReveal}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white"
               style={{ lineHeight: '1.2' }} // Adjusted line-height and letter-spacing
             >
               Where{' '}
@@ -177,7 +177,7 @@ const Header = () => {
 
             <motion.h1
               variants={clipReveal}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold italic font-serif text-[#631930]"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font- italic font-serif text-[#631930]"
               style={{ lineHeight: '1.2' }} // Adjusted line-height and letter-spacing
             >
               Heavenly Living
@@ -575,8 +575,8 @@ const Header = () => {
                 viewport={{ once: true }}
                 className="mx-auto md:mx-0"
               >
-                <h2 className="text-3xl md:text-5xl font-semibold mb-6 leading-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
-                  <span className="italic text-[#631930]">Living</span>, Not Just Residing
+                <h2 className="text-3xl md:text-5xl mb-6 font-light leading-tight">
+                  <span className="italic text-[#631930] font-serif">Living</span>, Not Just Residing
                 </h2>
                 <p className="text-lg text-gray-700 mb-8">
                   At Heavens Living, life blossoms through togetherness, laughter, and shared experiences. More than just a place to live, it's a thriving community where every day brings new friendships, heartfelt celebrations, and lasting memories.
