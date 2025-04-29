@@ -86,7 +86,7 @@ const ContactForm = () => {
                 <div className="flex justify-center">
                     <button
                         type="submit"
-                        className="bg-black p-2 px-3 rounded-full font-semibold text-white"
+                        className="bg-black p-2 px-3 rounded-md font-semibold text-white"
                     >
                         Send Message
                     </button>

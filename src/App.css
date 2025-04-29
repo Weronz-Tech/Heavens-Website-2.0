@@ -37,3 +37,30 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Add this to your global CSS file, such as styles.css or inside your tailwind config */
+@media (max-width: 768px) {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    /* For Internet Explorer and Edge */
+    scrollbar-width: none;
+    /* For Firefox */
+  }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shine {
+  animation: shine 1.5s ease-in-out 1;
+}

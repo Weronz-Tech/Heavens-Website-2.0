@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-const MarqueeRow = ({ items, speed = 30 }) => {
+const MarqueeRow = ({ items, speed = 30, direction = 'left' }) => {
   const rowRef = useRef(null);
 
   useEffect(() => {
@@ -15,9 +15,17 @@ const MarqueeRow = ({ items, speed = 30 }) => {
       const elapsed = timestamp - start;
 
       if (!isPaused) {
-        el.scrollLeft += speed * (elapsed / 1000);
-        if (el.scrollLeft >= el.scrollWidth - el.clientWidth) {
-          el.scrollLeft = 0;
+        const distance = speed * (elapsed / 1000);
+        if (direction === 'left') {
+          el.scrollLeft += distance;
+          if (el.scrollLeft >= el.scrollWidth - el.clientWidth) {
+            el.scrollLeft = 0;
+          }
+        } else {
+          el.scrollLeft -= distance;
+          if (el.scrollLeft <= 0) {
+            el.scrollLeft = el.scrollWidth - el.clientWidth;
+          }
         }
       }
 
@@ -38,19 +46,19 @@ const MarqueeRow = ({ items, speed = 30 }) => {
       el.removeEventListener('touchend', handleRelease);
       cancelAnimationFrame(animationId);
     };
-  }, [speed]);
+  }, [speed, direction]);
 
   return (
     <div
       ref={rowRef}
-      className="flex overflow-x-auto gap-4 px-1 py-2 scrollbar-none"
+      className="flex overflow-x-auto gap-4 px-1 py-2 no-scrollbar"
       style={{ WebkitOverflowScrolling: 'touch' }}
     >
       {items.map((item, index) => {
         const isAmenity = item.type === 'amenity';
         const classes = isAmenity
-          ? 'bg-gray-50 border border-gray-200 text-gray-700'
-          : 'bg-yellow-50 border border-yellow-100 text-yellow-800';
+          ? 'bg-gray-50 border border-gray-100 text-gray-700'
+          : 'bg-[#f1e3e7] border border-red-100 text-[#631930]';
 
         return (
           <div

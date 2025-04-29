@@ -13,10 +13,19 @@ import {
   FaGlassMartiniAlt,
   FaBook,
   FaLaptop,
-  FaSpa
+  FaSpa,
+  FaDoorClosed,
+  FaArrowAltCircleUp,
+  FaTv,
+  FaHotTub,
+  FaTint,
+  FaIceCream,
+  FaCoffee
 } from 'react-icons/fa';
+import { GiCookingPot } from 'react-icons/gi';
 import {
-  MdCleaningServices, MdLocalLaundryService
+  MdBathtub,
+  MdCleaningServices, MdHome, MdKitchen, MdLocalLaundryService
 } from 'react-icons/md';
 
 export const properties = [
@@ -29,20 +38,27 @@ export const properties = [
     images: [
       { type: 'image', url: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3000&q=80" },
       { type: 'image', url: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3000&q=80" },
+      { type: 'video', url: "https://example.com/video.mp4" },
       { type: 'image', url: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3000&q=80" },
       { type: 'image', url: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3000&q=80" },
-      { type: 'video', url: "https://example.com/video.mp4" }
     ],
     amenities: [
-      { name: "Wi-Fi", icon: <FaWifi /> }, // Wi-Fi icon is appropriate for Wi-Fi
+      { name: "High-Speed WIFI", icon: <FaWifi /> }, // Wi-Fi icon is appropriate for Wi-Fi
       { name: "CCTV", icon: <FaVideo /> }, // CCTV can use the FaVideo icon (security camera)
       { name: "Security", icon: <FaUserShield /> }, // FaUserShield is ideal for Security
       { name: "Housekeeping", icon: <MdCleaningServices /> }, // MdCleaningServices works well for Housekeeping
-      { name: "Power Backup", icon: <FaBolt /> }, // FaBolt is suitable for Power Backup
-      { name: "Laundry", icon: <MdLocalLaundryService /> }, // MdLocalLaundryService is great for Laundry
+      { name: "Spacious Cupboard", icon: <FaDoorClosed /> },
+      { name: "24/7 Power Backup", icon: <FaBolt /> }, // FaBolt is suitable for Power Backup
+      { name: "Washing Machine", icon: <MdLocalLaundryService /> }, // MdLocalLaundryService is great for Laundry
       { name: "Daily Meals", icon: <FaUtensils /> }, // FaUtensils is perfect for Meals
       { name: "Attached Bathroom", icon: <FaShower /> }, // FaShower fits the Attached Bathroom concept
-      { name: "Linen Provided", icon: <FaTshirt /> } // FaTshirt works for Linen Provided (clothing)
+      { name: "Lift", icon: <FaArrowAltCircleUp /> }, // Represents upward movement, suitable for elevator
+      { name: "Streaming TV", icon: <FaTv /> }, // FaTv directly represents a television
+      { name: "Water Purifier", icon: <FaTint /> }, // FaTint represents water and purification, symbolizing clean water.
+      { name: "Hot Water Supply", icon: <FaHotTub /> }, // FaHotTub symbolizes heated water facilities very well
+      { name: "Linen Provided", icon: <FaTshirt /> }, // FaTshirt works for Linen Provided (clothing)
+      { name: "Self Kitchen", icon: <MdKitchen /> },
+      { name: "Refrigerator", icon: <FaIceCream /> },
     ],
     foodPlan: {
       included: true,
@@ -76,15 +92,19 @@ export const properties = [
       { name: "Entertainment Zone", icon: <FaGamepad /> }, // FaGamepad works well for Entertainment Zone
       { name: "Barbeque Area", icon: <FaHamburger /> }, // FaHamburger is a good fit for BBQ or food-related services
       { name: "Gathering Area", icon: <FaUsers /> }, // FaUsers icon represents a Gathering Area
-      { name: "Gym", icon: <FaDumbbell /> }, // FaDumbbell fits perfectly for a gym or fitness-related service
+      { name: "Workout Zone", icon: <FaDumbbell /> }, // FaDumbbell fits perfectly for a gym or fitness-related service
       { name: "Meditation Area", icon: <FaSpa /> }, // FaLotus is ideal for a Meditation Area
+      { name: "Attached Bathroom", icon: <MdBathtub /> },
+      { name: "Cooking Lounge", icon: <GiCookingPot /> },
+      { name: "Attached Balcony", icon: <MdHome /> }, // FaBalcony directly represents a balcony or outdoor space
       { name: "AC Dining Hall", icon: <FaBuilding /> }, // FaBuilding works for AC Dining Hall (large enclosed space)
-      { name: "Game Section", icon: <FaDice /> }, // FaDice fits a Game Section or game-related services
-      { name: "Customised Rooms", icon: <FaCogs /> }, // FaCogs is appropriate for Customised Rooms (adjustment or personalization)
       { name: "Unlimited Juice", icon: <FaGlassMartiniAlt /> }, // FaGlassMartiniAlt fits Unlimited Juice or beverage services
+      { name: "Customised Rooms", icon: <FaCogs /> }, // FaCogs is appropriate for Customised Rooms (adjustment or personalization)
       { name: "Study Area", icon: <FaBook /> }, // FaBook works for a Study Area
-      { name: "Workspace", icon: <FaLaptop /> } // FaLaptop fits the concept of a Workspace
-    ], 
+      { name: "Indoor & Outdoor Games", icon: <FaGamepad /> }, // FaGamepad symbolizes general gameplay and recreation
+      { name: "Work Area", icon: <FaLaptop /> }, // FaLaptop fits the concept of a Workspace
+      { name: "Integrated Cafe", icon: <FaCoffee /> }, // FaCoffee represents a cafe or coffee-related space, perfect for a cafe
+    ],
     weeklyMenu: [
       {
         day: "Monday",
@@ -141,20 +161,27 @@ export const properties = [
     images: [
       { type: 'image', url: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3000&q=80" },
       { type: 'image', url: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3000&q=80" },
+      { type: 'video', url: "https://example.com/bloom-video.mp4" },
       { type: 'image', url: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3000&q=80" },
       { type: 'image', url: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3000&q=80" },
-      { type: 'video', url: "https://example.com/bloom-video.mp4" }
     ],
     amenities: [
-      { name: "Wi-Fi", icon: <FaWifi /> }, // Wi-Fi icon is appropriate for Wi-Fi
+      { name: "High-Speed WIFI", icon: <FaWifi /> }, // Wi-Fi icon is appropriate for Wi-Fi
       { name: "CCTV", icon: <FaVideo /> }, // CCTV can use the FaVideo icon (security camera)
       { name: "Security", icon: <FaUserShield /> }, // FaUserShield is ideal for Security
       { name: "Housekeeping", icon: <MdCleaningServices /> }, // MdCleaningServices works well for Housekeeping
-      { name: "Power Backup", icon: <FaBolt /> }, // FaBolt is suitable for Power Backup
-      { name: "Laundry", icon: <MdLocalLaundryService /> }, // MdLocalLaundryService is great for Laundry
+      { name: "Spacious Cupboard", icon: <FaDoorClosed /> },
+      { name: "24/7 Power Backup", icon: <FaBolt /> }, // FaBolt is suitable for Power Backup
+      { name: "Washing Machine", icon: <MdLocalLaundryService /> }, // MdLocalLaundryService is great for Laundry
       { name: "Daily Meals", icon: <FaUtensils /> }, // FaUtensils is perfect for Meals
       { name: "Attached Bathroom", icon: <FaShower /> }, // FaShower fits the Attached Bathroom concept
-      { name: "Linen Provided", icon: <FaTshirt /> } // FaTshirt works for Linen Provided (clothing)
+      { name: "Lift", icon: <FaArrowAltCircleUp /> }, // Represents upward movement, suitable for elevator
+      { name: "Streaming TV", icon: <FaTv /> }, // FaTv directly represents a television
+      { name: "Water Purifier", icon: <FaTint /> }, // FaTint represents water and purification, symbolizing clean water.
+      { name: "Hot Water Supply", icon: <FaHotTub /> }, // FaHotTub symbolizes heated water facilities very well
+      { name: "Linen Provided", icon: <FaTshirt /> }, // FaTshirt works for Linen Provided (clothing)
+      { name: "Self Kitchen", icon: <MdKitchen /> },
+      { name: "Refrigerator", icon: <FaIceCream /> },
     ],
     foodPlan: {
       included: true,
@@ -190,15 +217,19 @@ export const properties = [
       { name: "Entertainment Zone", icon: <FaGamepad /> }, // FaGamepad works well for Entertainment Zone
       { name: "Barbeque Area", icon: <FaHamburger /> }, // FaHamburger is a good fit for BBQ or food-related services
       { name: "Gathering Area", icon: <FaUsers /> }, // FaUsers icon represents a Gathering Area
-      { name: "Gym", icon: <FaDumbbell /> }, // FaDumbbell fits perfectly for a gym or fitness-related service
+      { name: "Workout Zone", icon: <FaDumbbell /> }, // FaDumbbell fits perfectly for a gym or fitness-related service
       { name: "Meditation Area", icon: <FaSpa /> }, // FaLotus is ideal for a Meditation Area
+      { name: "Attached Bathroom", icon: <MdBathtub /> },
+      { name: "Cooking Lounge", icon: <GiCookingPot /> },
+      { name: "Attached Balcony", icon: <MdHome /> }, // FaBalcony directly represents a balcony or outdoor space
       { name: "AC Dining Hall", icon: <FaBuilding /> }, // FaBuilding works for AC Dining Hall (large enclosed space)
-      { name: "Game Section", icon: <FaDice /> }, // FaDice fits a Game Section or game-related services
-      { name: "Customised Rooms", icon: <FaCogs /> }, // FaCogs is appropriate for Customised Rooms (adjustment or personalization)
       { name: "Unlimited Juice", icon: <FaGlassMartiniAlt /> }, // FaGlassMartiniAlt fits Unlimited Juice or beverage services
+      { name: "Customised Rooms", icon: <FaCogs /> }, // FaCogs is appropriate for Customised Rooms (adjustment or personalization)
       { name: "Study Area", icon: <FaBook /> }, // FaBook works for a Study Area
-      { name: "Workspace", icon: <FaLaptop /> } // FaLaptop fits the concept of a Workspace
-    ],    
+      { name: "Indoor & Outdoor Games", icon: <FaGamepad /> }, // FaGamepad symbolizes general gameplay and recreation
+      { name: "Work Area", icon: <FaLaptop /> }, // FaLaptop fits the concept of a Workspace
+      { name: "Integrated Cafe", icon: <FaCoffee /> }, // FaCoffee represents a cafe or coffee-related space, perfect for a cafe
+    ],
     weeklyMenu: [
       {
         day: "Monday",

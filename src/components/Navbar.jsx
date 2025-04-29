@@ -82,13 +82,13 @@ const Navbar = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
-    { name: "Explore", path: "/explore-properties" },
+    { name: "Explore", path: "/properties" },
     { name: "Contact", path: "/contact" },
   ];
 
   const socials = [
     { name: "Instagram", url: "https://www.instagram.com/heavensliving/" },
-    { name: "Twitter", url: "#" },
+    { name: "Justdial ", url: "https://jsdl.in/DT-154KJ7ALJJF" },
     { name: "Facebook", url: "#" },
   ];
 

@@ -5,6 +5,8 @@ import { FaRegSmileBeam, FaSpa } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { FiChevronRight } from 'react-icons/fi';
 import { useState, useEffect } from 'react';
+import { HiArrowUpRight } from 'react-icons/hi2';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
 
@@ -72,10 +74,35 @@ const Header = () => {
     );
   };
 
+  const containerVariant = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.5,
+      },
+    },
+  };
+
+  const clipReveal = {
+    hidden: {
+      opacity: 0,
+      clipPath: 'inset(100% 0 0 0)',
+    },
+    visible: {
+      opacity: 1,
+      clipPath: 'inset(0% 0 0 0)',
+      transition: {
+        duration: 1,
+        ease: [0.65, 0.05, 0.36, 1],
+      },
+    },
+  };
+
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-cream-50 h-screen relative overflow-hidden">
+      {/* <section className="bg-cream-50 h-screen relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <video
             className="w-full h-full object-cover rotate-[-90deg]"
@@ -85,19 +112,19 @@ const Header = () => {
             muted
             playsInline
           />
-          {/* <div className="absolute inset-0 bg-gradient-to-t from-[#101828] to-transparent"></div> */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#ffff] to-transparent"></div>
         </div>
 
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-white text-center px-4">
           <h2
-            className="text-2xl md:text-4xl font-semibold"
-            style={{ fontFamily: 'Playfair Display, serif' }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light"
+          // style={{ fontFamily: 'Playfair Display, serif' }}
           >
-            Where <span className="italic">Luxury</span> Meets
+            Where <span className="italic font-serif text-[#631930]">Elegance</span> Meets
           </h2>
           <h1
-            className="text-4xl md:text-6xl font-semibold mt-2 italic"
-            style={{ fontFamily: 'Playfair Display, serif' }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light mt-2 italic font-serif text-[#631930]"
+          // style={{ fontFamily: 'Playfair Display, serif' }}
           >
             Heavenly Living
           </h1>
@@ -105,11 +132,74 @@ const Header = () => {
           <MagneticButton
             className="mt-14 px-8 py-3 bg-transparent border border-white text-white font-semibold rounded-full shadow-md hover:bg-white hover:text-[#101828] transition-all duration-300"
           >
-            Book Now
+            <Link
+              to="/properties"
+              className="group inline-flex items-center text-gold-600 hover:text-gold-800 transition-colors duration-300 text-base md:text-lg"
+            >
+              Explore Our Properties
+              <HiArrowUpRight className="ml-2 w-4 h-4 md:w-5 md:h-5 " />
+            </Link>
           </MagneticButton>
         </div>
-      </section>
+      </section> */}
 
+      {/* Hero Section */}
+      <section className="bg-cream-50 h-screen relative overflow-hidden">
+        {/* 🔹 Background Video */}
+        <div className="absolute inset-0 z-0">
+          <video
+            className="w-full h-full object-cover"
+            src={video}
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#ffff] to-transparent"></div>
+        </div>
+
+        {/* 🔸 Foreground Content */}
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
+          <motion.div
+            variants={containerVariant}
+            initial="hidden"
+            animate="visible"
+            className="space-y-3 text-[#101828]"
+          >
+            <motion.h2
+              variants={clipReveal}
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white"
+            >
+              Where{' '}
+              <span className="italic font-serif text-[#631930]">Elegance</span> Meets
+            </motion.h2>
+
+            <motion.h1
+              variants={clipReveal}
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold italic font-serif text-[#631930]"
+            >
+              Heavenly Living
+            </motion.h1>
+          </motion.div>
+
+          {/* Button without hover effect */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.3, duration: 0.6 }}
+          >
+            <MagneticButton className="mt-14 px-8 py-3 border border-[#631930] text-[#631930] font-semibold rounded-full shadow-md bg-white">
+              <Link
+                to="/properties"
+                className="inline-flex items-center text-base md:text-lg"
+              >
+                Explore Our Properties
+                <HiArrowUpRight className="ml-2 w-4 h-4 md:w-5 md:h-5" />
+              </Link>
+            </MagneticButton>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Resident Journey Section */}
       <section className="relative overflow-hidden bg-cream-50 md:p-8">

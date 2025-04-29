@@ -64,7 +64,7 @@ const PropertyCarousel = ({ property }) => {
     margin: 0 5px;
   }
   .carousel-container .thumb.selected {
-    border: 2px solid #3B82F6;
+    border: 2px solid #631930;
   }
 `}
             </style>

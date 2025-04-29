@@ -53,6 +53,21 @@ const PropertyDetails = () => {
         window.open(`tel:${property.contact.phone}`);
     };
 
+    const alternateItems = (items) => {
+        const amenities = items.filter(item => item.type === 'amenity');
+        const services = items.filter(item => item.type === 'service');
+
+        const result = [];
+        const maxLength = Math.max(amenities.length, services.length);
+
+        for (let i = 0; i < maxLength; i++) {
+            if (i < amenities.length) result.push(amenities[i]);
+            if (i < services.length) result.push(services[i]);
+        }
+
+        return result;
+    };
+
     const mixedItems = property.amenities
         .map((amenity) => ({
             type: 'amenity',
@@ -65,6 +80,8 @@ const PropertyDetails = () => {
             }))
         )
         .sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+    const alternatedItems = alternateItems(mixedItems);
 
     return (
         <>
@@ -301,56 +318,56 @@ const PropertyDetails = () => {
                                                 {/* Single Occupancy */}
                                                 <motion.div
                                                     whileHover={{ y: -5 }}
-                                                    className="border border-gray-200 rounded-lg p-4 hover:border-blue-500 transition-colors"
+                                                    className="border border-gray-200 rounded-lg p-4 hover:border-[#631930] transition-colors"
                                                 >
                                                     <div className="flex justify-between items-start">
                                                         <div>
                                                             <h5 className="font-medium text-gray-900">Single Occupancy</h5>
                                                             <p className="text-sm text-gray-500">Private room</p>
                                                         </div>
-                                                        <span className="text-lg font-semibold text-blue-600">{property.oneSharing}</span>
+                                                        <span className="text-lg font-semibold text-[#631930]">{property.oneSharing}</span>
                                                     </div>
                                                 </motion.div>
 
                                                 {/* Double Occupancy */}
                                                 <motion.div
                                                     whileHover={{ y: -5 }}
-                                                    className="border border-gray-200 rounded-lg p-4 hover:border-blue-500 transition-colors"
+                                                    className="border border-gray-200 rounded-lg p-4 hover:border-[#631930] transition-colors"
                                                 >
                                                     <div className="flex justify-between items-start">
                                                         <div>
                                                             <h5 className="font-medium text-gray-900">Double Occupancy</h5>
                                                             <p className="text-sm text-gray-500">2 sharing</p>
                                                         </div>
-                                                        <span className="text-lg font-semibold text-blue-600">{property.twoSharing}</span>
+                                                        <span className="text-lg font-semibold text-[#631930]">{property.twoSharing}</span>
                                                     </div>
                                                 </motion.div>
 
                                                 {/* Triple Occupancy */}
                                                 <motion.div
                                                     whileHover={{ y: -5 }}
-                                                    className="border border-gray-200 rounded-lg p-4 hover:border-blue-500 transition-colors"
+                                                    className="border border-gray-200 rounded-lg p-4 hover:border-[#631930] transition-colors"
                                                 >
                                                     <div className="flex justify-between items-start">
                                                         <div>
                                                             <h5 className="font-medium text-gray-900">Triple Occupancy</h5>
                                                             <p className="text-sm text-gray-500">3 sharing</p>
                                                         </div>
-                                                        <span className="text-lg font-semibold text-blue-600">{property.threeSharing}</span>
+                                                        <span className="text-lg font-semibold text-[#631930]">{property.threeSharing}</span>
                                                     </div>
                                                 </motion.div>
 
                                                 {/* Quad Occupancy */}
                                                 <motion.div
                                                     whileHover={{ y: -5 }}
-                                                    className="border border-gray-200 rounded-lg p-4 hover:border-blue-500 transition-colors"
+                                                    className="border border-gray-200 rounded-lg p-4 hover:border-[#631930] transition-colors"
                                                 >
                                                     <div className="flex justify-between items-start">
                                                         <div>
                                                             <h5 className="font-medium text-gray-900">Quad Occupancy</h5>
                                                             <p className="text-sm text-gray-500">4 sharing</p>
                                                         </div>
-                                                        <span className="text-lg font-semibold text-blue-600">{property.fourSharing}</span>
+                                                        <span className="text-lg font-semibold text-[#631930]">{property.fourSharing}</span>
                                                     </div>
                                                 </motion.div>
                                                 {/* Five Sharing - Only show if available */}
@@ -364,7 +381,7 @@ const PropertyDetails = () => {
                                                                 <h5 className="font-medium text-gray-900">Five Sharing</h5>
                                                                 <p className="text-sm text-gray-500">5 sharing</p>
                                                             </div>
-                                                            <span className="text-lg font-semibold text-blue-600">{property.fiveSharing}</span>
+                                                            <span className="text-lg font-semibold text-[#631930]">{property.fiveSharing}</span>
                                                         </div>
                                                     </motion.div>
                                                 )}
@@ -394,17 +411,31 @@ const PropertyDetails = () => {
                         <div>
                             {/* 🔸 Mobile: Marquee-style horizontal scroll in 2 rows */}
                             <div className="block md:hidden space-y-3">
-                                <MarqueeRow items={mixedItems.slice(0, Math.ceil(mixedItems.length / 2))} />
-                                <MarqueeRow items={mixedItems.slice(Math.ceil(mixedItems.length / 2))} />
+                                <MarqueeRow
+                                    items={alternatedItems.slice(0, Math.ceil(alternatedItems.length / 4))}
+                                    direction="left"
+                                />
+                                <MarqueeRow
+                                    items={alternatedItems.slice(Math.ceil(alternatedItems.length / 4), Math.ceil(alternatedItems.length / 2))}
+                                    direction="right"
+                                />
+                                <MarqueeRow
+                                    items={alternatedItems.slice(Math.ceil(alternatedItems.length / 2), Math.ceil((3 * alternatedItems.length) / 4))}
+                                    direction="left"
+                                />
+                                <MarqueeRow
+                                    items={alternatedItems.slice(Math.ceil((3 * alternatedItems.length) / 4))}
+                                    direction="right"
+                                />
                             </div>
 
                             {/* 🔸 Desktop: Original flex-wrap layout */}
                             <div className="hidden md:flex md:flex-wrap gap-4">
-                                {mixedItems.map((item, index) => {
+                                {alternatedItems.map((item, index) => {
                                     const isAmenity = item.type === 'amenity';
                                     const classes = isAmenity
-                                        ? 'bg-gray-50 border border-gray-200 text-gray-700'
-                                        : 'bg-yellow-50 border border-yellow-100 text-yellow-800';
+                                        ? 'bg-gray-50 border border-gray-100 text-gray-700'
+                                        : 'bg-[#f1e3e7] border border-red-100 text-[#631930]';
 
                                     return (
                                         <div
