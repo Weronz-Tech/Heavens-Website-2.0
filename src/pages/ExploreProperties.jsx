@@ -152,7 +152,7 @@ const ExploreProperties = () => {
                         transition={{ duration: 0.8 }}
                     >
                         <div className="text-gold-500 mb-3 md:mb-4 uppercase tracking-wider text-xs md:text-sm font-medium">
-                            Luxury Living
+                            Heavenly Living
                         </div>
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-6 md:mb-8 text-gray-900">
                             <span className="font-serif italic text-[#631930]">Discover</span> Our Exclusive Properties
