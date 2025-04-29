@@ -99,7 +99,7 @@ const About = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 <span className="block font-serif italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#631930]">Elevating</span>
-                <span className="block">Luxury Living</span>
+                <span className="block">Refined Living</span>
                 <span className="block">To Divine</span>
                 <span className="block">Perfection</span>
               </motion.h1>
@@ -159,7 +159,7 @@ const About = () => {
               {...fadeIn}
               transition={{ delay: 0.4 }}
             >
-              We believe true luxury lies in the harmony of design, comfort, and soul.
+              We believe true elegance lies in the harmony of design, comfort, and soul.
               Each Heavens Living property is a testament to this philosophy, blending
               architectural brilliance with thoughtful amenities that elevate everyday living.
             </motion.p>
@@ -237,7 +237,7 @@ const About = () => {
             <div>
               <ServiceItem
                 number="01"
-                title="Luxury Residences"
+                title="Heavenly Residences"
                 description="Discover our curated collection of premium residences, each offering unparalleled comfort, security, and amenities designed for discerning homeowners."
               />
               <ServiceItem

@@ -6,13 +6,14 @@ import logo from "../assets/images/heavens-red.png";
 const Navbar = () => {
   const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [hideNavbar, setHideNavbar] = useState(false);
   const sidebarRef = useRef(null);
   const linksRef = useRef([]);
+  const lastScrollY = useRef(0);
 
-  const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen);
-  };
+  const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
 
+  // Handle GSAP sidebar animation
   useEffect(() => {
     if (sidebarOpen) {
       gsap.to(sidebarRef.current, {
@@ -41,6 +42,24 @@ const Navbar = () => {
     }
   }, [sidebarOpen]);
 
+  // Handle navbar hide on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > 80 && currentScrollY > lastScrollY.current) {
+        setHideNavbar(true); // scroll down → hide
+      } else {
+        setHideNavbar(false); // scroll up → show
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const MagneticNavLink = ({ to, children }) => {
     const linkRef = useRef(null);
     const isActive = location.pathname === to;
@@ -54,8 +73,7 @@ const Navbar = () => {
     };
 
     const handleMouseLeave = () => {
-      const link = linkRef.current;
-      link.style.transform = "translate(0px, 0px)";
+      linkRef.current.style.transform = "translate(0px, 0px)";
     };
 
     return (
@@ -88,14 +106,18 @@ const Navbar = () => {
 
   const socials = [
     { name: "Instagram", url: "https://www.instagram.com/heavensliving/" },
-    { name: "Justdial ", url: "https://jsdl.in/DT-154KJ7ALJJF" },
+    { name: "Justdial", url: "https://jsdl.in/DT-154KJ7ALJJF" },
     { name: "Facebook", url: "#" },
   ];
 
   return (
     <>
       {/* Navbar Top */}
-      <div className="bg-opacity-0 p-4 fixed top-0 left-0 right-0 z-50 md:px-6 px-2 mt-3">
+      <div
+        className={`fixed top-0 left-0 right-0 z-50 p-4 md:px-6 px-2 transition-all duration-500 ease-in-out ${
+          hideNavbar ? "opacity-0 -translate-y-full" : "opacity-100 translate-y-0"
+        } bg-transparent`}
+      >
         <div className="flex items-center justify-between">
           <Link to="/" className="z-10">
             <img src={logo} alt="Heavens Living Logo" className="h-6 w-auto" />
@@ -103,10 +125,11 @@ const Navbar = () => {
 
           {/* Desktop Nav */}
           <div className="space-x-[80px] hidden md:flex items-center">
-            <MagneticNavLink to="/">Home</MagneticNavLink>
-            <MagneticNavLink to="/about">About</MagneticNavLink>
-            <MagneticNavLink to="/properties">Explore</MagneticNavLink>
-            <MagneticNavLink to="/contact">Contact</MagneticNavLink>
+            {navLinks.map((link) => (
+              <MagneticNavLink key={link.name} to={link.path}>
+                {link.name}
+              </MagneticNavLink>
+            ))}
           </div>
 
           {/* Hamburger Button for Mobile */}
@@ -136,7 +159,6 @@ const Navbar = () => {
         className="fixed top-0 right-0 h-full w-full bg-[#1c1d20] text-white translate-x-full z-40 p-8 md:hidden flex flex-col justify-center items-center"
       >
         <div className="flex flex-col items-center space-y-12 w-full">
-          {/* Navigation */}
           <div className="space-y-8 text-center">
             <div className="text-xs tracking-widest text-gray-400 mb-6">
               NAVIGATION
@@ -158,11 +180,9 @@ const Navbar = () => {
               ))}
             </div>
           </div>
-            
-          {/* Horizontal Line */}
+
           <hr className="w-3/4 border-gray-600" />
-            
-          {/* Socials */}
+
           <div className="text-center">
             <div className="text-xs tracking-widest text-gray-400 mb-4">
               SOCIALS
@@ -183,7 +203,6 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-
 
       {/* Sidebar Background Blur */}
       {sidebarOpen && (

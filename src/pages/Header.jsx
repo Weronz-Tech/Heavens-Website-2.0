@@ -159,7 +159,7 @@ const Header = () => {
         </div>
 
         {/* 🔸 Foreground Content */}
-        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-">
           <motion.div
             variants={containerVariant}
             initial="hidden"
@@ -169,6 +169,7 @@ const Header = () => {
             <motion.h2
               variants={clipReveal}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white"
+              style={{ lineHeight: '1.2' }} // Adjusted line-height and letter-spacing
             >
               Where{' '}
               <span className="italic font-serif text-[#631930]">Elegance</span> Meets
@@ -177,6 +178,7 @@ const Header = () => {
             <motion.h1
               variants={clipReveal}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold italic font-serif text-[#631930]"
+              style={{ lineHeight: '1.2' }} // Adjusted line-height and letter-spacing
             >
               Heavenly Living
             </motion.h1>
@@ -188,7 +190,7 @@ const Header = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.3, duration: 0.6 }}
           >
-            <MagneticButton className="mt-14 px-8 py-3 border border-[#631930] text-[#631930] font-semibold rounded-full shadow-md bg-white">
+            <MagneticButton className="mt-10 md:mt-14 px-8 py-3 border border-[#631930] text-[#631930] font-semibold rounded-full shadow-md bg-white">
               <Link
                 to="/properties"
                 className="inline-flex items-center text-base md:text-lg"
@@ -228,7 +230,7 @@ const Header = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              Seamless luxury awaits you — from your first moment to every day at Heavens Living
+              Seamless refinement awaits you — from your first moment to every day at Heavens Living
             </motion.p>
           </div>
 
@@ -297,7 +299,7 @@ const Header = () => {
                   <div className="text-[#631930] text-sm font-medium mb-4">STEP 02</div>
                   <h3 className="text-2xl md:text-3xl font-semibold mb-4">Your Private Sanctuary</h3>
                   <p className="text-gray-600 mb-6">
-                    Step into your meticulously designed residence, where every detail reflects thoughtful luxury. Premium furnishings, smart home features, and personalized spaces await.
+                    Step into your meticulously designed residence, where every detail reflects refined living. Premium furnishings, smart home features, and personalized spaces await.
                   </p>
                   <ul className="space-y-3">
                     {['Premium bedding', 'Smart lighting', 'Ergonomic workspace', 'Housekeeping'].map((item, i) => (

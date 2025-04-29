@@ -131,8 +131,8 @@ const Footer = () => {
               <li className="flex items-start">
                 <HiOutlineMapPin className="text-gold-500 mt-1 mr-3 flex-shrink-0" />
                 <span className="text-gray-400">
-                  Flora Inn, Sannidhi Layout,<br />
-                  Bande Nalla Sandra, Anekal<br />
+                  Sannidhi Layout, Bande Nalla Sandra<br />
+                  Jigani, Bommasandra, Anekal<br />
                   Bangalore, India
                 </span>
               </li>

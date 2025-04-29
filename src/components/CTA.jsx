@@ -18,7 +18,7 @@ const CTA = () => {
           className="max-w-3xl mx-auto"
         >
           <p className="text-gold-600 text-xs md:text-sm uppercase tracking-widest mb-4 font-medium">
-            Experience The Divine Standard
+            Experience The Divine Lifestyle
           </p>
           <h2 className="text-gray-900 text-3xl md:text-5xl font-light leading-snug mb-6 md:mb-8 text-white">
             <span className="block font-serif italic">Crafted for Elegance,</span>
