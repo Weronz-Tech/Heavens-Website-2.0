@@ -97,7 +97,7 @@ export const properties = [
       { name: "Attached Bathroom", icon: <MdBathtub /> },
       { name: "Cooking Lounge", icon: <GiCookingPot /> },
       { name: "Attached Balcony", icon: <MdHome /> }, // FaBalcony directly represents a balcony or outdoor space
-      { name: "AC Dining Hall", icon: <FaBuilding /> }, // FaBuilding works for AC Dining Hall (large enclosed space)
+      { name: "Dining Area", icon: <FaBuilding /> }, // FaBuilding works for AC Dining Hall (large enclosed space)
       { name: "Unlimited Juice", icon: <FaGlassMartiniAlt /> }, // FaGlassMartiniAlt fits Unlimited Juice or beverage services
       { name: "Customised Rooms", icon: <FaCogs /> }, // FaCogs is appropriate for Customised Rooms (adjustment or personalization)
       { name: "Study Area", icon: <FaBook /> }, // FaBook works for a Study Area
@@ -222,7 +222,7 @@ export const properties = [
       { name: "Attached Bathroom", icon: <MdBathtub /> },
       { name: "Cooking Lounge", icon: <GiCookingPot /> },
       { name: "Attached Balcony", icon: <MdHome /> }, // FaBalcony directly represents a balcony or outdoor space
-      { name: "AC Dining Hall", icon: <FaBuilding /> }, // FaBuilding works for AC Dining Hall (large enclosed space)
+      { name: "Dining Area", icon: <FaBuilding /> }, // FaBuilding works for AC Dining Hall (large enclosed space)
       { name: "Unlimited Juice", icon: <FaGlassMartiniAlt /> }, // FaGlassMartiniAlt fits Unlimited Juice or beverage services
       { name: "Customised Rooms", icon: <FaCogs /> }, // FaCogs is appropriate for Customised Rooms (adjustment or personalization)
       { name: "Study Area", icon: <FaBook /> }, // FaBook works for a Study Area
