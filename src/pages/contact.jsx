@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { HiOutlinePhone, HiOutlineMapPin, HiArrowUpRight } from 'react-icons/hi2';
@@ -28,6 +28,13 @@ const ContactCard = ({ icon, title, info, link }) => (
 );
 
 const ContactForm = () => {
+
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const handleSubmit = (e) => {
+        setIsSubmitting(true); // show loading
+    };
+
     const fadeIn = {
         initial: { opacity: 0, y: 20 },
         animate: { opacity: 1, y: 0 },
@@ -43,13 +50,24 @@ const ContactForm = () => {
             variants={fadeIn}
         >
             <h3 className="text-2xl md:text-3xl font-light mb-6 text-gray-800">Send Us a Message</h3>
-            <form>
+            <form
+                action="https://formsubmit.co/heavensliving@gmail.com"
+                method="POST"
+                className="space-y-6"
+                onSubmit={handleSubmit}
+            >
+                {/* Hidden fields for config */}
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_next" value="http://192.168.1.65:3002/thank-you" />
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div>
                         <label htmlFor="name" className="block text-gray-600 text-sm mb-2">Name</label>
                         <input
+                            name="name"
                             type="text"
                             id="name"
+                            required
                             className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-gold-500 outline-none transition-all duration-300"
                             placeholder="Your name"
                         />
@@ -57,38 +75,84 @@ const ContactForm = () => {
                     <div>
                         <label htmlFor="email" className="block text-gray-600 text-sm mb-2">Email</label>
                         <input
+                            name="email"
                             type="email"
                             id="email"
+                            required
                             className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-gold-500 outline-none transition-all duration-300"
                             placeholder="your@email.com"
                         />
                     </div>
                 </div>
-                <div className="mb-6">
-                    <label htmlFor="subject" className="block text-gray-600 text-sm mb-2">Subject</label>
-                    <input
-                        type="text"
-                        id="subject"
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-gold-500 outline-none transition-all duration-300"
-                        placeholder="How can we help?"
-                    />
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label htmlFor="contact" className="block text-gray-600 text-sm mb-2">Contact</label>
+                        <input
+                            name="contact"
+                            type="number"
+                            id="number"
+                            required
+                            className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-gold-500 outline-none transition-all duration-300"
+                            placeholder="Contact Number"
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="subject" className="block text-gray-600 text-sm mb-2">Subject</label>
+                        <input
+                            name="subject"
+                            type="text"
+                            id="subject"
+                            required
+                            className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-gold-500 outline-none transition-all duration-300"
+                            placeholder="How can we help?"
+                        />
+                    </div>
                 </div>
+
                 <div className="mb-6">
                     <label htmlFor="message" className="block text-gray-600 text-sm mb-2">Message</label>
                     <textarea
+                        name="message"
                         id="message"
                         rows="5"
+                        required
                         className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-gold-500 outline-none transition-all duration-300"
                         placeholder="Your message..."
                     ></textarea>
                 </div>
 
+                {/* Submit button with loading */}
                 <div className="flex justify-center">
                     <button
                         type="submit"
-                        className="bg-black p-2 px-3 rounded-md font-semibold text-white"
+                        disabled={isSubmitting}
+                        className={`bg-[#631930] px-4 py-2 rounded-md font-semibold cursor-pointer text-white flex items-center gap-2 transition-opacity duration-300 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
+                            }`}
                     >
-                        Send Message
+                        {isSubmitting ? (
+                            <>
+                                <svg className="animate-spin h-5 w-5 text-white" viewBox="0 0 24 24">
+                                    <circle
+                                        className="opacity-25"
+                                        cx="12"
+                                        cy="12"
+                                        r="10"
+                                        stroke="currentColor"
+                                        strokeWidth="4"
+                                        fill="none"
+                                    />
+                                    <path
+                                        className="opacity-75"
+                                        fill="currentColor"
+                                        d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                                    />
+                                </svg>
+                                Sending...
+                            </>
+                        ) : (
+                            'Send Message'
+                        )}
                     </button>
                 </div>
             </form>

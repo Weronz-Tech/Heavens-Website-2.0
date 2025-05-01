@@ -213,7 +213,7 @@ const PropertyDetails = () => {
                                     whileHover={{ scale: 1.03 }}
                                     whileTap={{ scale: 0.98 }}
                                     onClick={openMap}
-                                    className="hidden md:flex items-center justify-center gap-2 cursor-pointer bg-black text-white py-3 px-6 rounded-lg font-medium transition-colors shadow-sm"
+                                    className="hidden md:flex items-center justify-center gap-2 cursor-pointer bg-[#631930] text-white py-3 px-6 rounded-lg font-medium transition-colors shadow-sm"
                                 >
                                     <FiMapPin />
                                     Show on Map
@@ -222,7 +222,7 @@ const PropertyDetails = () => {
                                     whileHover={{ scale: 1.03 }}
                                     whileTap={{ scale: 0.98 }}
                                     onClick={openCall}
-                                    className="hidden md:flex items-center justify-center gap-2 cursor-pointer bg-black text-white py-3 px-6 rounded-lg font-medium transition-colors shadow-sm"
+                                    className="hidden md:flex items-center justify-center gap-2 cursor-pointer bg-[#631930] text-white py-3 px-6 rounded-lg font-medium transition-colors shadow-sm"
                                 >
                                     <FiPhone />
                                     Contact

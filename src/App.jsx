@@ -11,6 +11,7 @@ import ExploreProperties from './pages/ExploreProperties';
 import PropertyDetails from './pages/PropertyDetails';
 import Loader from './components/Loader';
 import ChatButtons from './components/ChatButtons';
+import ThankYou from './pages/ThankYou ';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -30,7 +31,7 @@ function App() {
   return (
     <>
       {loading && <Loader />}
-      
+
       <div className={`transition-opacity duration-700 ${showContent ? 'opacity-100' : 'opacity-0'}`}>
         {!loading && (
           <>
@@ -38,6 +39,7 @@ function App() {
             <ScrollToTop />
             <Routes>
               <Route path="/" element={<Header />} />
+              <Route path="/thank-you" element={<ThankYou />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/about" element={<About />} />
               <Route path="/properties" element={<ExploreProperties />} />
