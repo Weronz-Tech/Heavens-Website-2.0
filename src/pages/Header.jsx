@@ -1,5 +1,9 @@
 import CTA from '../components/CTA';
 import video from '../assets/videos/heavens-video.mp4';
+import app1 from "../assets/images/app1.png";
+import app2 from "../assets/images/app2.png";
+import app3 from "../assets/images/app3.png";
+import app4 from "../assets/images/app4.jpg";
 import { useRef } from 'react';
 import { FaRegSmileBeam, FaSpa } from 'react-icons/fa';
 import { motion } from 'framer-motion';
@@ -7,6 +11,7 @@ import { FiChevronRight } from 'react-icons/fi';
 import { useState, useEffect } from 'react';
 import { HiArrowUpRight } from 'react-icons/hi2';
 import { Link } from 'react-router-dom';
+
 
 const Header = () => {
 
@@ -17,25 +22,31 @@ const Header = () => {
       number: '01',
       title: "Resident Registration",
       desc: "Upon registration, residents can log in, complete their profiles, and access all community features seamlessly.",
-      img: "https://img.freepik.com/free-vector/sign-concept-illustration_114360-5425.jpg?t=st=1745835158~exp=1745838758~hmac=1a2730def23f18b4f0248cd64dd28e59c4c49928c5955b40b34aa052cf05c16c&w=826",
+      img: `${app1}`,
       label: "Complete Your Profile"
     },
     {
       number: '02',
-      title: "Meal and Add-on Booking",
-      desc: "Residents can easily book their daily meals, order special add-ons, and enjoy offerings from the Heaves Café — all within the app.",
-      img: "https://img.freepik.com/premium-vector/woman-ordering-food-online-via-apps-illustration-websites-landing-pages-mobile-applications-posters-banners-trendy-flat-vector-illustration_108061-986.jpg?w=826",
-      label: "Book Meals & Café Orders"
+      title: "Meal Booking System",
+      desc: "Residents can easily book their daily meals and special dietary requirements through our intuitive meal planning interface.",
+      img: `${app2}`,
+      label: "Book Your Meals"
     },
     {
       number: '03',
+      title: "Heavens Café & Restaurant",
+      desc: "Explore our premium dining options, place orders from the café menu, and reserve tables at our restaurant - all within the app.",
+      img: `${app3}`,
+      label: "Dining & Reservations"
+    },
+    {
+      number: '04',
       title: "Payment & History",
       desc: "Easily manage payments, track your transaction history, and stay updated on any outstanding dues through your dashboard.",
-      img: "https://img.freepik.com/free-vector/payment-information-concept-illustration_114360-1733.jpg?t=st=1745835267~exp=1745838867~hmac=41374fca49fd8f0b499bea50d7a4e65f9be71a72bc800def9ea620941234ad46&w=826",
+      img: `${app4}`,
       label: "View Payment History"
     }
   ];
-
 
   // Optional auto-rotate effect
   useEffect(() => {
@@ -101,48 +112,6 @@ const Header = () => {
 
   return (
     <>
-      {/* Hero Section */}
-      {/* <section className="bg-cream-50 h-screen relative overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <video
-            className="w-full h-full object-cover rotate-[-90deg]"
-            src={video}
-            autoPlay
-            loop
-            muted
-            playsInline
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#ffff] to-transparent"></div>
-        </div>
-
-        <div className="relative z-10 h-full flex flex-col items-center justify-center text-white text-center px-4">
-          <h2
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light"
-          // style={{ fontFamily: 'Playfair Display, serif' }}
-          >
-            Where <span className="italic font-serif text-[#631930]">Elegance</span> Meets
-          </h2>
-          <h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light mt-2 italic font-serif text-[#631930]"
-          // style={{ fontFamily: 'Playfair Display, serif' }}
-          >
-            Heavenly Living
-          </h1>
-
-          <MagneticButton
-            className="mt-14 px-8 py-3 bg-transparent border border-white text-white font-semibold rounded-full shadow-md hover:bg-white hover:text-[#101828] transition-all duration-300"
-          >
-            <Link
-              to="/properties"
-              className="group inline-flex items-center text-gold-600 hover:text-gold-800 transition-colors duration-300 text-base md:text-lg"
-            >
-              Explore Our Properties
-              <HiArrowUpRight className="ml-2 w-4 h-4 md:w-5 md:h-5 " />
-            </Link>
-          </MagneticButton>
-        </div>
-      </section> */}
-
       {/* Hero Section */}
       <section className="bg-cream-50 h-screen relative overflow-hidden">
         {/* 🔹 Background Video */}
@@ -343,12 +312,12 @@ const Header = () => {
                   viewport={{ once: true }}
                 >
                   <div className="text-[#631930] text-sm font-medium mb-4">STEP 03</div>
-                  <h3 className="text-2xl md:text-3xl font-semibold mb-4">Culinary Excellence</h3>
+                  <h3 className="text-2xl md:text-3xl font-semibold mb-4">Exceptional Dining</h3>
                   <p className="text-gray-600 mb-6">
-                    Savor chef-curated meals in our elegant dining spaces or private rooms. Our seasonal menus blend nutrition with gourmet flavors, accommodating all dietary preferences.
+                    Enjoy chef-crafted meals in elegant, thoughtfully designed settings. Our seasonal menus are both nutritious and flavorful, tailored to every preference.
                   </p>
                   <ul className="space-y-3">
-                    {['Daily chef specials', 'Nutritionist-approved', 'Private dining', 'Theme nights'].map((item, i) => (
+                    {['Daily chef specials', 'Nutritionist-approved', 'Elegant dining settings', 'Seasonal culinary events'].map((item, i) => (
                       <li key={i} className="flex items-center">
                         <div className="w-5 h-5 rounded-full bg-[#631930]/10 flex items-center justify-center mr-3">
                           <div className="w-2 h-2 rounded-full bg-[#631930]"></div>
@@ -379,7 +348,7 @@ const Header = () => {
                 </motion.div>
               </div>
 
-              {/* 4. Community & Maintenance */}
+              {/* 4. Homestyle Meals */}
               <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <motion.div
                   className="lg:order-2 lg:pl-20"
@@ -389,12 +358,17 @@ const Header = () => {
                   viewport={{ once: true }}
                 >
                   <div className="text-[#631930] text-sm font-medium mb-4">STEP 04</div>
-                  <h3 className="text-2xl md:text-3xl font-semibold mb-4">Effortless Living</h3>
+                  <h3 className="text-2xl md:text-3xl font-semibold mb-4">Daily Homestyle Meals</h3>
                   <p className="text-gray-600 mb-6">
-                    From vibrant social spaces to hassle-free maintenance, we handle every detail so you can focus on what matters. Our team ensures your home remains flawless.
+                    Enjoy nutritious, home-cooked meals prepared fresh every day. Our kitchen offers balanced menus that bring the comfort of traditional flavors to your everyday routine.
                   </p>
                   <ul className="space-y-3">
-                    {['Personalized services', 'Exclusive events', 'Wellness programs', 'On-demand support'].map((item, i) => (
+                    {[
+                      'Freshly cooked vegetarian and non-vegetarian meals',
+                      'Weekly rotating menus',
+                      'Balanced and hygienic food',
+                      'Special weekend treats',
+                    ].map((item, i) => (
                       <li key={i} className="flex items-center">
                         <div className="w-5 h-5 rounded-full bg-[#631930]/10 flex items-center justify-center mr-3">
                           <div className="w-2 h-2 rounded-full bg-[#631930]"></div>
@@ -413,17 +387,18 @@ const Header = () => {
                   viewport={{ once: true }}
                 >
                   <img
-                    src="https://img.freepik.com/free-vector/stay-home-concept_52683-35421.jpg?t=st=1745842172~exp=1745845772~hmac=99675526daae69f4cc063e5d24cc75d5f876b8c1448fc7b18039cb2628fa65a4&w=1380"
-                    alt="Community space"
+                    src="https://img.freepik.com/free-photo/indian-thali-traditional-food_466689-76204.jpg?w=1380"
+                    alt="Homestyle Food"
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent flex items-end p-8">
-                    <h4 className="text-white text-xl font-medium">Resident Lounge</h4>
+                    <h4 className="text-white text-xl font-medium">Comfort on Every Plate</h4>
                   </div>
                   {/* Timeline Dot */}
                   <div className="absolute top-1/2 -left-3 lg:left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-[#631930] border-4 border-[#faf6f2] z-10"></div>
                 </motion.div>
               </div>
+
             </div>
           </div>
         </div>
@@ -445,51 +420,42 @@ const Header = () => {
                 <span className="font-serif italic text-[#631930]">Seamless</span> Living, <span className="font-serif italic text-[#631930]">Connected</span> Through Smart Solutions
               </motion.h2>
 
-              {/* Mobile Mockup Illustration */}
-              <motion.div
-                className="relative w-full aspect-square max-w-md mx-auto mb-8 md:mb-12 h-[500px]"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-              >
-                {/* Device Frame */}
-                <div className="absolute w-[300px] md:w-[300px] inset-0 rounded-[40px] border-[14px] border-gray-900 overflow-hidden shadow-2xl z-10 ml-6"></div>
+              {/* Scaled Wrapper */}
+              <div className="transform scale-85 md:scale-90 lg:scale-90 mx-auto">
+                <motion.div
+                  className="relative w-full aspect-square max-w-md mx-auto h-[600px]"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                >
+                  {/* Device Frame */}
+                  <div className="absolute w-[300px] inset-0 rounded-[40px] border-[14px] border-gray-900 overflow-hidden shadow-2xl z-10 ml-7"></div>
 
-                {/* Screen Content */}
-                <div className="absolute w-[280px] inset-3 rounded-[32px] overflow-hidden bg-gray-100 ml-6">
-                  {/* App Screens */}
-                  <motion.div
-                    className="absolute inset-0 flex"
-                    animate={{ x: `-${activeFeature * 100}%` }}
-                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                  >
-                    {features.map((feature, i) => (
-                      <div key={i} className="min-w-full h-full relative">
-                        <img
-                          src={feature.img}
-                          alt={feature.label}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    ))}
-                  </motion.div>
+                  {/* Screen Content */}
+                  <div className="absolute w-[285px] inset-3 rounded-[32px] overflow-hidden bg-gray-100 ml-7">
+                    {/* App Screens */}
+                    <motion.div
+                      className="absolute inset-0 flex"
+                      animate={{ x: `-${activeFeature * 100}%` }}
+                      transition={{ type: "spring", stiffness: 400, damping: 40, duration: 0.1 }}
+                    >
+                      {features.map((feature, i) => (
+                        <div key={i} className="min-w-full h-full relative">
+                          <img
+                            src={feature.img}
+                            alt={feature.label}
+                            className="w-[275px] h-full"
+                          />
+                        </div>
+                      ))}
+                    </motion.div>
+                  </div>
 
-                  {/* Indicator Dots
-                  <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-20">
-                    {features.map((_, i) => (
-                      <button
-                        key={i}
-                        onClick={() => setActiveFeature(i)}
-                        className={`w-2 h-2 rounded-full transition-all ${activeFeature === i ? 'bg-white w-4' : 'bg-white/40'}`}
-                      />
-                    ))}
-                  </div> */}
-                </div>
-
-                {/* Notch */}
-                <div className="absolute top-0 left-1/2 lg:left-[183PX] transform -translate-x-1/2 w-1/3 h-7 bg-gray-900 rounded-b-xl z-20"></div>
-              </motion.div>
+                  {/* Notch */}
+                  <div className="absolute top-0 left-[188px] transform -translate-x-1/2 w-[120px] h-7 bg-gray-900 rounded-b-xl z-20"></div>
+                </motion.div>
+              </div>
             </div>
 
             {/* Right Column - App Features List */}
@@ -497,7 +463,7 @@ const Header = () => {
               {features.map((feature, i) => (
                 <motion.div
                   key={i}
-                  className={`border-t border-[#e8e0d5] py-6 md:py-8 group ${activeFeature === i ? 'opacity-100' : 'opacity-70 hover:opacity-90'}`}
+                  className={`border-t border-[#e8e0d5] py-6 md:py-7  group ${activeFeature === i ? 'opacity-100' : 'opacity-70 hover:opacity-90'}`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 0.7, y: 0 }}
                   whileHover={{ opacity: 0.9 }}
@@ -509,7 +475,7 @@ const Header = () => {
                 >
                   <div className="flex items-start justify-between cursor-pointer">
                     <div className="flex-1">
-                      <div className="text-[#631930] mb-2 font-mono text-xs tracking-wider">
+                      <div className="text-[#631930] font-mono text-xs tracking-wider">
                         {feature.number}
                       </div>
                       <h3 className="text-xl md:text-2xl font-medium text-gray-800 group-hover:text-[#631930] transition-colors duration-300">
@@ -530,9 +496,9 @@ const Header = () => {
               ))}
 
               {/* App Store Badges */}
-              <div className="flex gap-4 mt-8 justify-center lg:justify-start">
+              <div className="flex gap-4 mt-3 justify-center lg:justify-start">
                 <motion.a
-                  href="https://apps.apple.com/" // Replace with your real App Store URL
+                  href="https://apps.apple.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-black text-white px-6 py-3 rounded-lg flex items-center gap-2"
@@ -544,7 +510,7 @@ const Header = () => {
                 </motion.a>
 
                 <motion.a
-                  href="https://play.google.com/store" // Replace with your real Play Store URL
+                  href="https://play.google.com/store"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-black text-white px-6 py-3 rounded-lg flex items-center gap-2"
@@ -555,7 +521,6 @@ const Header = () => {
                   Play Store
                 </motion.a>
               </div>
-
             </div>
           </div>
         </div>
@@ -611,7 +576,7 @@ const Header = () => {
                       <motion.img
                         whileHover={{ scale: 1.1 }}
                         key={item}
-                        src={`https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3000&q=80`}
+                        src={`https://img.freepik.com/premium-photo/profile-icon-white-background_941097-162179.jpg?w=826`}
                         alt="Community member"
                         className="w-10 h-10 rounded-full border-2 border-white"
                       />

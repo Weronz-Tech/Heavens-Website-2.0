@@ -374,7 +374,7 @@ const PropertyDetails = () => {
                                                 {property.fiveSharing && (
                                                     <motion.div
                                                         whileHover={{ y: -5 }}
-                                                        className="border border-gray-200 rounded-lg p-4 hover:border-blue-500 transition-colors"
+                                                        className="border border-gray-200 rounded-lg p-4 hover:border-[#631930] transition-colors"
                                                     >
                                                         <div className="flex justify-between items-start">
                                                             <div>

@@ -10,6 +10,7 @@ import ScrollToTop from './components/ScrollToTop';
 import ExploreProperties from './pages/ExploreProperties';
 import PropertyDetails from './pages/PropertyDetails';
 import Loader from './components/Loader';
+import ChatButtons from './components/ChatButtons';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -43,6 +44,7 @@ function App() {
               <Route path="/properties/:id" element={<PropertyDetails />} />
             </Routes>
             <Footer />
+            <ChatButtons /> {/* Floating Chat Button */}
           </>
         )}
       </div>
