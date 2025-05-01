@@ -37,8 +37,8 @@ const PropertyCard = ({
 
             {/* Preferred by tag - with z-index */}
             <div
-                className={`absolute top-4 right-4 flex items-center ${preferredBy === 'boys' ? 'bg-blue-500/90' : 'bg-pink-500/90'
-                    } backdrop-blur-sm px-3 py-1.5 rounded-full shadow-sm z-20`}
+                className={`absolute top-4 right-1 md:right-4 flex items-center ${preferredBy === 'boys' ? 'bg-blue-500/90' : 'bg-pink-500/90'
+                    } backdrop-blur-sm px-3 py-1.5 rounded-full shadow-sm z-20 transform scale-95 md:scale-90 lg:scale-100`}
             >
                 {preferredBy === 'boys' ? (
                     <>
@@ -54,7 +54,7 @@ const PropertyCard = ({
             </div>
 
             {/* Price Tag - responsive */}
-            <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-1 rounded-full shadow-sm z-20">
+            <div className="absolute top-4 left-1 lmd:eft-4 bg-white/90 backdrop-blur-sm px-4 py-1 rounded-full shadow-sm z-20 transform scale-95 md:scale-90 lg:scale-100">
                 <div className="flex items-baseline">
                     <span className="text-gold-600 text-xs font-medium mr-1">Starting at</span>
                     <span className="text-gold-600 font-medium">

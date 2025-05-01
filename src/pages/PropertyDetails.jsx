@@ -233,7 +233,7 @@ const PropertyDetails = () => {
                         {/* Row 3: Map and Contact Buttons for Mobile */}
                         <motion.div
                             variants={itemVariants}
-                            className="md:hidden flex gap-4"
+                            className="md:hidden flex gap-1"
                         >
                             <motion.button
                                 whileHover={{ scale: 1.03 }}
