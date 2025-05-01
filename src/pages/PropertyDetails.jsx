@@ -89,12 +89,12 @@ const PropertyDetails = () => {
                 initial="hidden"
                 animate="visible"
                 variants={containerVariants}
-                className="mt-18 lg:pl-4 lg:pr-4"
+                className="mt-12 lg:pl-4 lg:pr-4"
             >
                 {/* Property Header */}
                 <motion.div
                     variants={itemVariants}
-                    className="bg-white py-6"
+                    className="bg-cream-50 py-6"
                 >
                     <div className="container mx-auto px-4 space-y-4">
                         {/* Row 1: Name + Share */}
@@ -132,7 +132,7 @@ const PropertyDetails = () => {
                                 </button>
 
                                 {/* Dropdown */}
-                                <div className="absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-100 ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-20 overflow-hidden">
+                                <div className="absolute right-0 mt-2 w-64 bg-cream-50 rounded-xl shadow-md border border-[#631930] ring-[#631930] ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-20 overflow-hidden">
                                     <div className="py-2 px-3">
                                         <button
                                             onClick={() =>
@@ -239,7 +239,7 @@ const PropertyDetails = () => {
                                 whileHover={{ scale: 1.03 }}
                                 whileTap={{ scale: 0.98 }}
                                 onClick={openMap}
-                                className="w-1/2 flex items-center justify-center gap-2 bg-black cursor-pointer text-white py-3 px-6 rounded-lg font-medium transition-colors shadow-sm"
+                                className="w-1/2 flex items-center justify-center gap-2 bg-[#631930] cursor-pointer text-white py-3 px-6 rounded-lg font-medium transition-colors shadow-sm"
                             >
                                 <FiMapPin />
                                 Show on Map
@@ -248,7 +248,7 @@ const PropertyDetails = () => {
                                 whileHover={{ scale: 1.03 }}
                                 whileTap={{ scale: 0.98 }}
                                 onClick={openCall}
-                                className="w-1/2 flex items-center justify-center gap-2 bg-black cursor-pointer text-white py-3 px-6 rounded-lg font-medium transition-colors shadow-sm"
+                                className="w-1/2 flex items-center justify-center gap-2 bg-[#631930] cursor-pointer text-white py-3 px-6 rounded-lg font-medium transition-colors shadow-sm"
                             >
                                 <FiPhone />
                                 Contact
@@ -269,7 +269,7 @@ const PropertyDetails = () => {
                             variants={itemVariants}
                             className="w-full sm:w-[400px] md:w-[600px] lg:w-[800px]"
                         >
-                            <div className="relative overflow-hidden rounded-xl shadow-xl border border-gray-100">
+                            <div className="relative rounded-xl shadow-xl border border-gray-100">
                                 <PropertyCarousel property={property} />
                             </div>
                         </motion.div>
@@ -285,7 +285,7 @@ const PropertyDetails = () => {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.3 }}
-                                    className="bg-white p-6 rounded-xl shadow-xl border border-gray-100"
+                                    className="bg-cream-50 p-6 rounded-xl shadow-xl border border-gray-100"
                                 >
                                     <div className="space-y-4">
                                         <div>
@@ -466,7 +466,7 @@ const PropertyDetails = () => {
                         </div>
 
                         {/* Content Box */}
-                        <div className="bg-white p-6 md:p-8 rounded-2xl shadow-xl border border-gray-100 mb-20">
+                        <div className="bg-cream-50 p-6 md:p-8 rounded-2xl shadow-xl border border-gray-100 mb-20">
                             {/* Responsive Scrollable Table */}
                             <div className="overflow-x-auto">
                                 <table className="min-w-full table-auto divide-y divide-gray-200">
@@ -482,7 +482,7 @@ const PropertyDetails = () => {
                                             ))}
                                         </tr>
                                     </thead>
-                                    <tbody className="bg-white divide-y divide-gray-100">
+                                    <tbody className="bg-cream-50 divide-y divide-gray-100">
                                         {property.weeklyMenu.map((day, index) => (
                                             <motion.tr
                                                 key={index}

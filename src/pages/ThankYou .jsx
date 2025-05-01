@@ -6,7 +6,7 @@ const ThankYou = () => {
     return (
         <div className="min-h-screen flex items-center justify-center bg-cream-50 px-4">
             <motion.div
-                className="text-center bg-white p-10 rounded-xl shadow-md max-w-md"
+                className="text-center bg-cream-50 p-10 rounded-xl shadow-md max-w-md"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}

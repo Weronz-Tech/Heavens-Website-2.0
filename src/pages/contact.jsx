@@ -6,7 +6,7 @@ import { FiChevronRight } from 'react-icons/fi';
 
 const ContactCard = ({ icon, title, info, link }) => (
     <motion.div
-        className="border border-gray-100 rounded-xl p-6 md:p-8 bg-white hover:shadow-lg transition-all duration-300 h-full"
+        className="border border-gray-100 rounded-xl p-6 md:p-8 bg-cream-50 hover:shadow-lg transition-all duration-300 h-full"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
@@ -43,7 +43,7 @@ const ContactForm = () => {
 
     return (
         <motion.div
-            className="bg-white rounded-xl p-6 md:p-8 lg:p-10 shadow-sm"
+            className="bg-cream-50 rounded-xl p-6 md:p-8 lg:p-10 shadow-sm"
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
@@ -247,7 +247,7 @@ const ContactUs = () => {
             </section>
 
             {/* Contact Methods Section */}
-            <section className="py-16 bg-cream-100">
+            <section className="bg-cream-100 mb-20">
                 <div className="flex justify-center">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8 max-w-6xl">
                         <ContactCard
@@ -267,7 +267,7 @@ const ContactUs = () => {
             </section>
 
             {/* Contact Form + Map Section */}
-            <section className="bg-white mb-16">
+            <section className="bg-cream-50 mb-16">
                 <div className="container mx-auto px-4 sm:px-6 md:px-12">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16">
                         {/* Contact Form */}
@@ -276,13 +276,8 @@ const ContactUs = () => {
                         </div>
 
                         {/* Map */}
-                        {/* Map */}
                         <motion.div
                             className="relative w-full h-full min-h-[400px] lg:min-h-[500px] rounded-xl overflow-hidden"
-                            initial={{ opacity: 0, x: 40 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
                         >
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.830839094549!2d77.64838797454391!3d12.789489918845844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6b102129bec7%3A0x269e46f969a347c0!2sHeavens%20Living%20-%20Flora%20Inn!5e0!3m2!1sen!2sin!4v1745399780578!5m2!1sen!2sin"

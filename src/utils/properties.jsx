@@ -156,7 +156,7 @@ export const properties = [
     id: 'bloom-inn',
     name: "Bloom Inn",
     location: "92 Sannidhi Layout, Bande Nalla Sandra Near HCL Tech Gate No 2,Jigani, Bommasandra, Bengaluru",
-    map: "https://maps.app.goo.gl/RCRkL4mjuACrwGwy8",
+    map: "https://maps.app.goo.gl/RDskfcqg4mZW2KPw7",
     description: "Bloom Inn redefines modern living with effortless elegance—a harmonious blend of style, comfort, and convenience designed for students and professionals seeking a refined retreat",
     images: [
       { type: 'image', url: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3000&q=80" },

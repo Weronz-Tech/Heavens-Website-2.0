@@ -4,7 +4,7 @@ import logo from "../assets/images/h-red.png";
 
 const Loader = () => {
     return (
-        <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#faf6f2]">
+        <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-cream-50">
             {/* Logo with dual animation */}
             <motion.div
                 className="relative w-32 h-32"

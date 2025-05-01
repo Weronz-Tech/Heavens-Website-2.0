@@ -169,7 +169,7 @@ const Header = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.3, duration: 0.6 }}
           >
-            <MagneticButton className="mt-10 md:mt-14 px-8 py-3 border border-[#631930] text-[#631930] font-semibold rounded-full shadow-md bg-white">
+            <MagneticButton className="mt-10 md:mt-14 px-8 py-3 border border-[#631930] text-[#631930] font-semibold rounded-full shadow-md bg-cream-50">
               <Link
                 to="/properties"
                 className="inline-flex items-center text-base md:text-lg"

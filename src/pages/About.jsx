@@ -146,7 +146,7 @@ const About = () => {
       </section>
 
       {/* Philosophy Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-cream-50">
         <div className="container mx-auto px-4 sm:px-6 md:px-12">
           <div className="max-w-4xl mx-auto md:text-center mb-12 md:mb-20">
             <motion.div
@@ -263,7 +263,7 @@ const About = () => {
         </div>
       </section>
 
-      <section id="testimonials" className="bg-white overflow-hidden mb-20 mt-20">
+      <section id="testimonials" className="bg-cream-50 overflow-hidden mb-20 mt-20">
         <div className="container mx-auto px-4 sm:px-6 md:px-12">
           {/* Heading */}
           <motion.div
