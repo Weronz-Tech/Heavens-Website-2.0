@@ -187,6 +187,7 @@ const ContactUs = () => {
                     <div className="absolute inset-0 -z-10">
                         <div className="absolute inset-0 bg-gradient-to-b from-cream-50/80 to-cream-50"></div>
                         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=3000&auto=format&fit=crop')] bg-cover bg-center mix-blend-overlay opacity-10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#ffff] to-transparent"></div>
                     </div>
 
                     <motion.div

@@ -4,6 +4,7 @@ import app1 from "../assets/images/app1.png";
 import app2 from "../assets/images/app2.png";
 import app3 from "../assets/images/app3.png";
 import app4 from "../assets/images/app4.jpg";
+import home from "../assets/images/home.jpg";
 import { useRef } from 'react';
 import { FaRegSmileBeam, FaSpa } from 'react-icons/fa';
 import { motion } from 'framer-motion';
@@ -114,21 +115,31 @@ const Header = () => {
     <>
       {/* Hero Section */}
       <section className="bg-cream-50 h-screen relative overflow-hidden">
-        {/* 🔹 Background Video */}
+        {/* 🔹 Background Media */}
         <div className="absolute inset-0 z-0">
+          {/* Show image on small screens */}
+          <img
+            src={home}
+            className="w-full h-full block lg:hidden"
+            alt="Background"
+          />
+
+          {/* Show video on large screens */}
           <video
-            className="w-full h-full object-cover"
-            src={video}
+            className="w-full h-full object-cover hidden lg:block"
+            src={video} // make sure the `video` import exists
             autoPlay
             loop
             muted
             playsInline
           />
+
+          {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#ffff] to-transparent"></div>
         </div>
 
         {/* 🔸 Foreground Content */}
-        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-">
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center">
           <motion.div
             variants={containerVariant}
             initial="hidden"
@@ -137,23 +148,22 @@ const Header = () => {
           >
             <motion.h2
               variants={clipReveal}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white"
-              style={{ lineHeight: '1.2' }} // Adjusted line-height and letter-spacing
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
+              style={{ lineHeight: '1.2' }}
             >
-              Where{' '}
-              <span className="italic font-serif text-[#631930]">Elegance</span> Meets
+              Where <span className="italic font-serif text-[#631930]">Elegance</span> Meets
             </motion.h2>
 
             <motion.h1
               variants={clipReveal}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font- italic font-serif text-[#631930]"
-              style={{ lineHeight: '1.2' }} // Adjusted line-height and letter-spacing
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl italic font-serif text-[#631930]"
+              style={{ lineHeight: '1.2' }}
             >
               Heavenly Living
             </motion.h1>
           </motion.div>
 
-          {/* Button without hover effect */}
+          {/* CTA Button */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
