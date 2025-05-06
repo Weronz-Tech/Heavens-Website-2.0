@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://192.168.1.68:3002/sitemap.xml
+Sitemap: https://heavens-website-2-0.onrender.com/sitemap.xml
  
