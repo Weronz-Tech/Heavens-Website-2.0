@@ -552,7 +552,7 @@ const Header = () => {
           <div className="flex flex-col md:flex-row">
 
             {/* Left Content Section - No changes needed here */}
-            <div className="md:w-1/2 mb-10 md:mb-0 md:pr-12">
+            <div className="md:w-1/2 md:mb-0 md:pr-12">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -595,7 +595,7 @@ const Header = () => {
                   ))}
                 </div>
 
-                <div className="mt-8 flex items-center">
+                <div className="hidden md:flex items-center mt-8">
                   <div className="flex -space-x-2 mr-4">
                     {[1, 2, 3, 4].map((item) => (
                       <motion.img
@@ -670,6 +670,23 @@ const Header = () => {
           </div>
         </div>
 
+        <div className="flex md:hidden transform scale-65 md:scale-90 lg:scale-90 mt-4">
+          <div className="flex -space-x-2">
+            {[1, 2, 3, 4].map((item) => (
+              <motion.img
+                whileHover={{ scale: 1.1 }}
+                key={item}
+                src={`https://img.freepik.com/premium-photo/profile-icon-white-background_941097-162179.jpg?w=826`}
+                alt="Community member"
+                className="w-10 h-10 rounded-full border-2 border-white"
+              />
+            ))}
+          </div>
+          <p className="text-sm text-gray-600 ml-12">
+            <span className="font-medium text-gray-800">150+ residents</span> growing, thriving, and celebrating life together
+          </p>
+        </div>
+
         {/* Animation Keyframes */}
         <style jsx>{`
     @keyframes orbit {
@@ -681,7 +698,6 @@ const Header = () => {
     }
   `}</style>
       </section>
-
       <CTA />
     </>
   );
