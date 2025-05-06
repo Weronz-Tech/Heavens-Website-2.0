@@ -161,6 +161,14 @@ const Header = () => {
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
               style={{ lineHeight: '1.2' }}
             >
+              <div className="text-[#631930] text-sm font-medium mb-4">HEAVENS LIVING</div>
+            </motion.h2>
+
+            <motion.h2
+              variants={clipReveal}
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
+              style={{ lineHeight: '1.2' }}
+            >
               Where <span className="italic font-serif text-[#631930]">Elegance</span> Meets
             </motion.h2>
 
