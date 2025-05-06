@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import CTA from '../components/CTA';
 import { GoArrowUpRight } from 'react-icons/go';
 import { FaMale, FaFemale } from 'react-icons/fa';
+import explore1 from "../assets/images/explore1.jpg";
+// import explore1 from "../assets/images/explore1.jpg";
 
 const PropertyCard = ({
     name,
@@ -123,7 +125,7 @@ const ExploreProperties = () => {
             name: "Flora Inn",
             location: "Bangalore, Karnataka",
             description: "Flora Inn blends timeless aesthetics with modern essentials—designed for students and professionals seeking a stylish, peaceful, and connected place to live",
-            imageUrl: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3000&q=80",
+            imageUrl: explore1,
             amenities: ["Customized Rooms", "Healthy Food", "Fitness Center", "24*7 Gate Open"],
             price: 6500,
             preferredBy: 'boys'

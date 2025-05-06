@@ -12,6 +12,7 @@ import PropertyDetails from './pages/PropertyDetails';
 import Loader from './components/Loader';
 import ChatButtons from './components/ChatButtons';
 import ThankYou from './pages/ThankYou ';
+import ImageGallery from './pages/ImageGallery';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -44,6 +45,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/properties" element={<ExploreProperties />} />
               <Route path="/properties/:id" element={<PropertyDetails />} />
+              <Route path="/gallery/moments" element={<ImageGallery />} />
             </Routes>
             <Footer />
             <ChatButtons /> {/* Floating Chat Button */}

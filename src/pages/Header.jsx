@@ -1,10 +1,19 @@
 import CTA from '../components/CTA';
-import video from '../assets/videos/heavens-video.mp4';
+import video from '../assets/videos/homeV.mp4';
 import app1 from "../assets/images/app1.png";
 import app2 from "../assets/images/app2.png";
 import app3 from "../assets/images/app3.png";
 import app4 from "../assets/images/app4.jpg";
 import home from "../assets/images/home.jpg";
+import home1 from "../assets/images/home1.jpg";
+import home2 from "../assets/images/home2.jpg";
+import home3 from "../assets/images/home3.jpg";
+import life1 from "../assets/images/life1.jpg";
+import life2 from "../assets/images/life2.jpg";
+import life3 from "../assets/images/life3.jpg";
+import life4 from "../assets/images/life4.jpg";
+import life5 from "../assets/images/life5.jpg";
+
 import { useRef } from 'react';
 import { FaRegSmileBeam, FaSpa } from 'react-icons/fa';
 import { motion } from 'framer-motion';
@@ -119,7 +128,8 @@ const Header = () => {
         <div className="absolute inset-0 z-0">
           {/* Show image on small screens */}
           <img
-            src={home}
+            // src={home}
+            src='https://i.pinimg.com/1200x/b8/90/1e/b8901ea4bd2dffd9ccb5714795d47d95.jpg'
             className="w-full h-full block lg:hidden"
             alt="Background"
           />
@@ -254,7 +264,7 @@ const Header = () => {
                   viewport={{ once: true }}
                 >
                   <img
-                    src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3000&q=80"
+                    src={home1}
                     alt="Luxury reception"
                     className="w-full h-full object-cover"
                   />
@@ -300,7 +310,7 @@ const Header = () => {
                   viewport={{ once: true }}
                 >
                   <img
-                    src="https://img.freepik.com/free-vector/hand-drawn-glamping-illustration_23-2149377094.jpg?t=st=1745841968~exp=1745845568~hmac=0750f37b39726eaac116d453a6467924519146e758fa02d06dc9565e1022af9b&w=826"
+                    src={home2}
                     alt="Premium room"
                     className="w-full h-full object-cover"
                   />
@@ -346,7 +356,7 @@ const Header = () => {
                   viewport={{ once: true }}
                 >
                   <img
-                    src="https://img.freepik.com/free-vector/hand-drawn-iranian-woman-illustration_23-2149857688.jpg?t=st=1745842118~exp=1745845718~hmac=7874a546fffc278ab51f8739530a854e1b0b6d8e62583a3947f760123985192f&w=900"
+                    src={home3}
                     alt="Dining area"
                     className="w-full h-full object-cover"
                   />
@@ -567,16 +577,21 @@ const Header = () => {
                     title: "Wellness in Every Step",
                     desc: "Shared journeys in health, mindfulness, and happiness — nurturing both body and spirit through meaningful community experiences."
                   }].map(({ Icon, title, desc }, i) => (
-                    <motion.div
-                      key={i}
-                      className="p-6 rounded-xl shadow-md"
-                    >
-                      <div className="text-[#631930] mb-3">
-                        <Icon className="h-8 w-8" />
-                      </div>
-                      <h3 className="text-xl font-semibold mb-2 text-gray-800">{title}</h3>
-                      <p className="text-gray-600">{desc}</p>
-                    </motion.div>
+                    <Link to={'/gallery/moments'}>
+                      <motion.div
+                        key={i}
+                        className="p-6 rounded-xl shadow-md hover:shadow-xl bg-white cursor-pointer"
+                        initial={{ scale: 1 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                      >
+                        <div className="text-[#631930] mb-3">
+                          <Icon className="h-8 w-8" />
+                        </div>
+                        <h3 className="text-xl font-semibold mb-2 text-gray-800">{title}</h3>
+                        <p className="text-gray-600">{desc}</p>
+                      </motion.div>
+                    </Link>
+
                   ))}
                 </div>
 
@@ -600,7 +615,7 @@ const Header = () => {
             </div>
 
             {/* Right Animated Images Section - Modified for mobile */}
-            <div className="md:w-1/2 relative h-[500px]">
+            <div className="md:w-1/2 relative h-[500px] transform scale-[0.74] md:scale-90 lg:scale-90">
               {/* Main Center Card */}
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
@@ -609,45 +624,28 @@ const Header = () => {
                 viewport={{ once: true }}
                 className="absolute inset-0 flex items-center justify-center z-10"
               >
-                <motion.div
-                  className="w-[200px] h-[240px] md:w-72 md:h-96 rounded-xl shadow-xl overflow-hidden relative transition-all duration-700 hover:shadow-2xl"
-                >
-                  <img
-                    src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3000&q=80"
-                    alt="Happy community moment"
-                    className="w-full h-full object-cover"
-                  />
-                  <h3 className="absolute bottom-10 left-4 text-white text-xl font-medium">Moments of Joy</h3>
-                  <p className="absolute bottom-4 left-4 text-white/80 text-sm">Living life, together</p>
-                </motion.div>
+                <Link to={'/gallery/moments'}>
+                  <motion.div
+                    className="w-[290px] h-[410px] md:w-72 md:h-96 rounded-xl shadow-xl overflow-hidden relative transition-all duration-700 hover:shadow-2xl"
+                  >
+                    <img
+                      src={life1}
+                      alt="Happy community moment"
+                      className="w-full h-full object-cover"
+                    />
+                    <h3 className="absolute bottom-10 left-4 text-white text-xl font-medium">Moments of Joy</h3>
+                    <p className="absolute bottom-4 left-4 text-white/80 text-sm">Living life, together</p>
+                  </motion.div>
+                </Link>
               </motion.div>
 
-              {/* Mobile View - Static Layout */}
-              <div className="md:hidden absolute inset-0 flex items-center justify-center">
-                <div className="grid grid-cols-2 gap-4 w-full h-full p-8">
-                  {[1, 2, 3, 4].map((item) => (
-                    <motion.div
-                      key={item}
-                      whileHover={{ scale: 1.05 }}
-                      className="rounded-xl overflow-hidden shadow-md"
-                    >
-                      <img
-                        src={`https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3000&q=80`}
-                        alt={`Happy moment ${item}`}
-                        className="w-full h-full object-cover"
-                      />
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Desktop View - Rotating Cards */}
-              <div className="hidden md:block">
-                {[1, 2, 3, 4].map((item, index) => (
+              {/* Unified Animated Layout (Mobile & Desktop) */}
+              <div className="relative w-full h-full ml-2 md:ml-0">
+                {[life2, life3, life4, life5].map((item, index) => (
                   <motion.div
                     key={index}
                     whileHover={{ scale: 1.1 }}
-                    className="absolute w-28 md:w-44 h-40 md:h-60 rounded-xl overflow-hidden shadow-lg"
+                    className="absolute w-40 md:w-44 h-52 md:h-60 rounded-xl overflow-hidden shadow-lg"
                     style={{
                       transform: `rotate(${index * 90}deg) translateX(180px) rotate(-${index * 90}deg)`,
                       animation: `orbit 16s linear infinite`,
@@ -660,7 +658,7 @@ const Header = () => {
                     }}
                   >
                     <img
-                      src={`https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3000&q=80`}
+                      src={item}
                       alt={`Happy moment ${item}`}
                       className="w-full h-full object-cover"
                     />
