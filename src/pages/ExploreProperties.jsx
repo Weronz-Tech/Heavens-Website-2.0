@@ -5,6 +5,7 @@ import CTA from '../components/CTA';
 import { GoArrowUpRight } from 'react-icons/go';
 import { FaMale, FaFemale } from 'react-icons/fa';
 import explore1 from "../assets/images/explore1.jpg";
+import SEO from '../components/SEO';
 // import explore1 from "../assets/images/explore1.jpg";
 
 const PropertyCard = ({
@@ -145,6 +146,11 @@ const ExploreProperties = () => {
     return (
         <>
             <section className="py-20 md:py-28 bg-cream-50">
+                <SEO
+                    title="PG Properties in Bangalore | Heaves Living"
+                    description="Explore our range of premium PG properties in Bangalore for boys and girls. Verified listings with top-class amenities."
+                    keywords="PG properties Bangalore, Boys PG, Girls PG, PG listings"
+                />
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         className="max-w-4xl mx-auto text-center"

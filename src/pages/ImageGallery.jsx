@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { XMarkIcon, ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/solid';
 import { useState, useEffect } from 'react';
 import CTA from '../components/CTA';
+import SEO from '../components/SEO';
 
 const ImageGallery = () => {
     const galleries = {
@@ -91,6 +92,11 @@ const ImageGallery = () => {
 
         return (
             <div className="mb-16">
+                <SEO
+                    title="PG Gallery | Heaves Living"
+                    description="View photos of our PG rooms, common areas, and amenities at Heaves Living. Explore the space before you book."
+                    keywords="PG images, Heaves Living photos, PG gallery, Boys PG pictures, Girls PG pictures"
+                />
                 <motion.h2
                     className="text-3xl md:text-5xl mb-8 text-center font-light leading-tight"
                     initial={{ opacity: 0, y: -20 }}

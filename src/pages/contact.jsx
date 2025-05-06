@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { HiOutlinePhone, HiOutlineMapPin, HiArrowUpRight } from 'react-icons/hi2';
 import { FiChevronRight } from 'react-icons/fi';
+import SEO from '../components/SEO';
 
 const ContactCard = ({ icon, title, info, link }) => (
     <motion.div
@@ -49,6 +50,11 @@ const ContactForm = () => {
             viewport={{ once: true }}
             variants={fadeIn}
         >
+            <SEO
+                title="Contact Us | Heaves Living"
+                description="Get in touch with Heaves Living for PG booking, inquiries, or support. We're here to help you find the best PGs in Bangalore."
+                keywords="Contact Heaves Living, PG support, PG booking Bangalore"
+            />
             <h3 className="text-2xl md:text-3xl font-light mb-6 text-gray-800">Send Us a Message</h3>
             <form
                 action="https://formsubmit.co/heavensliving@gmail.com"

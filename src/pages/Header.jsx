@@ -4,7 +4,7 @@ import app1 from "../assets/images/app1.png";
 import app2 from "../assets/images/app2.png";
 import app3 from "../assets/images/app3.png";
 import app4 from "../assets/images/app4.jpg";
-import home from "../assets/images/home.jpg";
+// import home from "../assets/images/home.jpg";
 import home1 from "../assets/images/home1.jpg";
 import home2 from "../assets/images/home2.jpg";
 import home3 from "../assets/images/home3.jpg";
@@ -21,6 +21,7 @@ import { FiChevronRight } from 'react-icons/fi';
 import { useState, useEffect } from 'react';
 import { HiArrowUpRight } from 'react-icons/hi2';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 
 const Header = () => {
@@ -124,6 +125,11 @@ const Header = () => {
     <>
       {/* Hero Section */}
       <section className="bg-cream-50 h-screen relative overflow-hidden">
+        <SEO
+          title="Heaves Living | Premium PGs in Bangalore"
+          description="Find verified, affordable PGs for boys and girls in Bangalore. Book your space with Heaves Living today!"
+          keywords="PG in Bangalore, Boys PG, Girls PG, Hostel Bangalore"
+        />
         {/* 🔹 Background Media */}
         <div className="absolute inset-0 z-0">
           {/* Show image on small screens */}

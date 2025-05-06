@@ -10,6 +10,7 @@ import img3 from "../assets/images/img3.png";
 import img4 from "../assets/images/img4.png";
 import img5 from "../assets/images/img5.png";
 import img6 from "../assets/images/img6.png";
+import SEO from '../components/SEO';
 
 const ServiceItem = ({ number, title, description }) => (
   <motion.div
@@ -76,6 +77,11 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-cream-50">
+      <SEO
+        title="About Us | Heaves Living"
+        description="Learn more about Heaves Living – your trusted provider for affordable and comfortable PG accommodations in Bangalore."
+        keywords="About Heaves Living, PG company Bangalore, PG service, students and working professionals"
+      />
       {/* Hero Section */}
       <section className="relative overflow-hidden">
 
