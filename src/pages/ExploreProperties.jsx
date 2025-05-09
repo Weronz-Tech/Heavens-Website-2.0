@@ -1,10 +1,10 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import CTA from '../components/CTA';
 import { GoArrowUpRight } from 'react-icons/go';
 import { FaMale, FaFemale } from 'react-icons/fa';
 import explore1 from "../assets/images/explore1.jpg";
+import boominn from "../assets/images/boominn.jpg";
 import SEO from '../components/SEO';
 // import explore1 from "../assets/images/explore1.jpg";
 
@@ -136,9 +136,9 @@ const ExploreProperties = () => {
             name: "Bloom Inn",
             location: "Bangalore, Karnataka",
             description: "Bloom Inn redefines modern living with effortless elegance—a harmonious blend of style, comfort, and convenience designed for students and professionals seeking a refined retreat.",
-            imageUrl: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2980&q=80",
+            imageUrl: boominn,
             amenities: ["Fully Furnished Rooms", "Free Wi-Fi", "CCTV", "Security"],
-            price: 6500,
+            price: 6000,
             preferredBy: 'girls'
         }
     ];

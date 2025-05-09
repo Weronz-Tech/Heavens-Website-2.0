@@ -532,29 +532,31 @@ const Header = () => {
 
               {/* App Store Badges */}
               <div className="flex gap-4 mt-3 justify-center lg:justify-start">
-                <motion.a
-                  href="https://apps.apple.com/"
+                {/* App Store */}
+                <a
+                  href="https://apps.apple.com/in/app/heavens-living/id6740050954"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#631930] text-white px-6 py-3 rounded-lg flex items-center gap-2"
                 >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
-                  </svg>
-                  App Store
-                </motion.a>
+                  <img
+                    src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                    alt="Download on the App Store"
+                    className="h-12"
+                  />
+                </a>
 
-                <motion.a
-                  href="https://play.google.com/store"
+                {/* Play Store */}
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.weronz.heavensliving&pcampaignid=web_share"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#631930] text-white px-6 py-3 rounded-lg flex items-center gap-2"
                 >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.25-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm-.56-5.36L6.05 2.66l8.49 8.49 2.27-2.27zm6.53 3.94c.39-.39.39-1.02 0-1.41l-2.26-2.26c-.39-.39-1.02-.39-1.41 0l-1.71 1.71 3.67 3.67 1.71-1.71z" />
-                  </svg>
-                  Play Store
-                </motion.a>
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                    alt="Get it on Google Play"
+                    className="h-12"
+                  />
+                </a>
               </div>
             </div>
           </div>

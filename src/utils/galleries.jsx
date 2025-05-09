@@ -23,7 +23,6 @@ import promo4 from "../assets/images/promo4.jpg";
 import promo5 from "../assets/images/promo5.jpg";
 import promo6 from "../assets/images/promo6.jpg";
 import home1 from "../assets/images/home1.jpg";
-import home2 from "../assets/images/home2.jpg";
 import home3 from "../assets/images/home3.jpg";
 import rooftop from "../assets/images/rooftop.jpg";
 import roomwithtv from "../assets/images/roomwithtv.jpg";

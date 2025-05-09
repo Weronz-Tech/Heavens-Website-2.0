@@ -239,25 +239,25 @@ const ImageGallery = () => {
                 <div className="flex flex-wrap justify-center gap-4 mb-12">
                     <button
                         onClick={() => setActiveCategory('all')}
-                        className={`px-6 py-2 rounded-full transition-all ${activeCategory === 'all' ? 'bg-[#631930] text-white' : 'bg-white text-gray-700 hover:bg-gray-100'}`}
+                        className={`px-6 cursor-pointer py-2 rounded-full transition-all ${activeCategory === 'all' ? 'bg-[#631930] text-white' : 'bg-white text-gray-700 hover:bg-gray-100'}`}
                     >
                         All
                     </button>
                     <button
                         onClick={() => setActiveCategory('moments')}
-                        className={`px-6 py-2 rounded-full transition-all ${activeCategory === 'moments' ? 'bg-[#631930] text-white' : 'bg-white text-gray-700 hover:bg-gray-100'}`}
+                        className={`px-6 cursor-pointer py-2 rounded-full transition-all ${activeCategory === 'moments' ? 'bg-[#631930] text-white' : 'bg-white text-gray-700 hover:bg-gray-100'}`}
                     >
                         Living Well
                     </button>
                     <button
                         onClick={() => setActiveCategory('wellness')}
-                        className={`px-6 py-2 rounded-full transition-all ${activeCategory === 'wellness' ? 'bg-[#631930] text-white' : 'bg-white text-gray-700 hover:bg-gray-100'}`}
+                        className={`px-6 cursor-pointer py-2 rounded-full transition-all ${activeCategory === 'wellness' ? 'bg-[#631930] text-white' : 'bg-white text-gray-700 hover:bg-gray-100'}`}
                     >
                         Our Spaces
                     </button>
                     <button
                         onClick={() => setActiveCategory('events')}
-                        className={`px-6 py-2 rounded-full transition-all ${activeCategory === 'events' ? 'bg-[#631930] text-white' : 'bg-white text-gray-700 hover:bg-gray-100'}`}
+                        className={`px-6 cursor-pointer py-2 rounded-full transition-all ${activeCategory === 'events' ? 'bg-[#631930] text-white' : 'bg-white text-gray-700 hover:bg-gray-100'}`}
                     >
                         Events
                     </button>

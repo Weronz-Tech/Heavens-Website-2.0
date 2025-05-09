@@ -27,6 +27,16 @@ import {
   MdBathtub,
   MdCleaningServices, MdHome, MdKitchen, MdLocalLaundryService
 } from 'react-icons/md';
+import home3 from "../assets/images/home3.jpg";
+import roombed from "../assets/images/roombed.jpg";
+import dining from "../assets/images/dining.jpg";
+import roomwithtv from "../assets/images/roomwithtv.jpg";
+import video1 from '../assets/videos/homeV.mp4';
+import video2 from '../assets/videos/bloominn.mp4';
+import boominn from "../assets/images/boominn.jpg";
+import bloominn1 from "../assets/images/blomminnroom1.jpg";
+import bloominn2 from "../assets/images/bloominnroom2.jpg";
+import bloominn3 from "../assets/images/bloominnroom3.jpg";
 
 export const properties = [
   {
@@ -36,11 +46,11 @@ export const properties = [
     map: "https://maps.app.goo.gl/RCRkL4mjuACrwGwy8",
     description: "Flora Inn blends timeless aesthetics with modern essentials—designed for students and professionals seeking a stylish, peaceful, and connected place to live",
     images: [
-      { type: 'image', url: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3000&q=80" },
-      { type: 'image', url: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3000&q=80" },
-      { type: 'video', url: "https://example.com/video.mp4" },
-      { type: 'image', url: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3000&q=80" },
-      { type: 'image', url: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3000&q=80" },
+      { type: 'image', url: home3 },
+      { type: 'image', url: dining },
+      { type: 'video', url: video1 },
+      { type: 'image', url: roombed },
+      { type: 'image', url: roomwithtv },
     ],
     amenities: [
       { name: "High-Speed WIFI", icon: <FaWifi /> }, // Wi-Fi icon is appropriate for Wi-Fi
@@ -107,46 +117,46 @@ export const properties = [
     ],
     weeklyMenu: [
       {
-        day: "Monday",
-        breakfast: "Idli-Sambar",
-        lunch: "Rice-Dal-Sabzi",
-        dinner: "Roti-Curry"
+        day: "MONDAY",
+        breakfast: "DOSA, TOMATO CHUTNEY, SAMBAR",
+        lunch: "MEALS, RICE, SAMBAR, AVIVAL, PAPADAM",
+        dinner: "CHAPTER, MASALA CURRY"
       },
       {
-        day: "Tuesday",
-        breakfast: "Poha",
-        lunch: "Rajma-Rice",
-        dinner: "Pasta"
+        day: "TUESDAY",
+        breakfast: "POORI, BAAJI",
+        lunch: "MEALS, MORUCURRY, THORAN",
+        dinner: "MANDI RICE MAYONNAISE"
       },
       {
-        day: "Wednesday",
-        breakfast: "Dosa",
-        lunch: "Vegetable Biryani",
-        dinner: "Noodles"
+        day: "WEDNESDAY",
+        breakfast: "PUTTU, KADALA",
+        lunch: "RICE, PAPPADAM, PACHADI, PULIYINCHI",
+        dinner: "POROTTA, GREEN BEANS, CHICKEN CURRY"
       },
       {
-        day: "Thursday",
-        breakfast: "Upma",
-        lunch: "Sambar-Rice",
-        dinner: "Dosa"
+        day: "THURSDAY",
+        breakfast: "IDLI, SAMBAR",
+        lunch: "MEALS, FISH CURRY/VEG CURRY, THORAN, PICKEL",
+        dinner: "GHEE RICE, DHAL CURRY"
       },
       {
-        day: "Friday",
-        breakfast: "Bread-Jam",
-        lunch: "Chapati-Curry",
-        dinner: "Khichdi"
+        day: "FRIDAY",
+        breakfast: "DOSA, TOMATO CHUTNEY, COCONUT CHUTNEY",
+        lunch: "CHOR, SOYA BEAN, UPPERI",
+        dinner: "EGG BIRIYANI"
       },
       {
-        day: "Saturday",
-        breakfast: "Paratha",
-        lunch: "Rice-Dal-Sabzi",
-        dinner: "Sandwiches"
+        day: "SATURDAY",
+        breakfast: "PASTHA, KETCHUP",
+        lunch: "MEALS, VEG CURRY, THORAN, PICKEL",
+        dinner: "CHAPTER, BAAJI CURRY"
       },
       {
-        day: "Sunday",
-        breakfast: "Idli-Sambar",
-        lunch: "Vegetable Biryani",
-        dinner: "Roti-Curry"
+        day: "SUNDAY",
+        breakfast: "UPMAVU, BANANA",
+        lunch: "MEALS, VEG CURRY, RASAM",
+        dinner: "BIRIYANI DUM SPECIAL"
       }
     ]
   },
@@ -159,11 +169,11 @@ export const properties = [
     map: "https://maps.app.goo.gl/RDskfcqg4mZW2KPw7",
     description: "Bloom Inn redefines modern living with effortless elegance—a harmonious blend of style, comfort, and convenience designed for students and professionals seeking a refined retreat",
     images: [
-      { type: 'image', url: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3000&q=80" },
-      { type: 'image', url: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3000&q=80" },
-      { type: 'video', url: "https://example.com/bloom-video.mp4" },
-      { type: 'image', url: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3000&q=80" },
-      { type: 'image', url: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3000&q=80" },
+      { type: 'image', url: boominn },
+      { type: 'image', url: bloominn2 },
+      { type: 'video', url: video2 },
+      { type: 'image', url: bloominn1 },
+      { type: 'image', url: bloominn3 },
     ],
     amenities: [
       { name: "High-Speed WIFI", icon: <FaWifi /> }, // Wi-Fi icon is appropriate for Wi-Fi
@@ -232,46 +242,46 @@ export const properties = [
     ],
     weeklyMenu: [
       {
-        day: "Monday",
-        breakfast: "Pongal",
-        lunch: "Jeera Rice-Dal",
-        dinner: "Chole Bhature"
+        day: "MONDAY",
+        breakfast: "DOSA, TOMATO CHUTNEY, SAMBAR",
+        lunch: "MEALS, RICE, SAMBAR, AVIVAL, PAPADAM",
+        dinner: "CHAPTER, MASALA CURRY"
       },
       {
-        day: "Tuesday",
-        breakfast: "Upma",
-        lunch: "Palak Paneer-Roti",
-        dinner: "Veg Noodles"
+        day: "TUESDAY",
+        breakfast: "POORI, BAAJI",
+        lunch: "MEALS, MORUCURRY, THORAN",
+        dinner: "MANDI RICE MAYONNAISE"
       },
       {
-        day: "Wednesday",
-        breakfast: "Idli-Vada",
-        lunch: "Vegetable Fried Rice",
-        dinner: "Methi Paratha"
+        day: "WEDNESDAY",
+        breakfast: "PUTTU, KADALA",
+        lunch: "RICE, PAPPADAM, PACHADI, PULIYINCHI",
+        dinner: "POROTTA, GREEN BEANS, CHICKEN CURRY"
       },
       {
-        day: "Thursday",
-        breakfast: "Bread-Omelette",
-        lunch: "Curd Rice",
-        dinner: "Pav Bhaji"
+        day: "THURSDAY",
+        breakfast: "IDLI, SAMBAR",
+        lunch: "MEALS, FISH CURRY/VEG CURRY, THORAN, PICKEL",
+        dinner: "GHEE RICE, DHAL CURRY"
       },
       {
-        day: "Friday",
-        breakfast: "Poha",
-        lunch: "Rajma Chawal",
-        dinner: "Upma"
+        day: "FRIDAY",
+        breakfast: "DOSA, TOMATO CHUTNEY, COCONUT CHUTNEY",
+        lunch: "CHOR, SOYA BEAN, UPPERI",
+        dinner: "EGG BIRIYANI"
       },
       {
-        day: "Saturday",
-        breakfast: "Dosa",
-        lunch: "Jeera Rice-Dal",
-        dinner: "Sandwiches"
+        day: "SATURDAY",
+        breakfast: "PASTHA, KETCHUP",
+        lunch: "MEALS, VEG CURRY, THORAN, PICKEL",
+        dinner: "CHAPTER, BAAJI CURRY"
       },
       {
-        day: "Sunday",
-        breakfast: "Pongal",
-        lunch: "Palak Paneer-Roti",
-        dinner: "Chole Bhature"
+        day: "SUNDAY",
+        breakfast: "UPMAVU, BANANA",
+        lunch: "MEALS, VEG CURRY, RASAM",
+        dinner: "BIRIYANI DUM SPECIAL"
       }
     ]
   },
