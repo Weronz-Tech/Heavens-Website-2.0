@@ -10,6 +10,7 @@ import img3 from "../assets/images/img3.png";
 import img4 from "../assets/images/img4.png";
 import img5 from "../assets/images/img5.png";
 import img6 from "../assets/images/img6.png";
+import home3 from "../assets/images/home3.jpg";
 import SEO from '../components/SEO';
 
 const ServiceItem = ({ number, title, description }) => (
@@ -243,8 +244,10 @@ const About = () => {
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-gold-100 to-gold-300 rounded-xl md:rounded-2xl rotate-3"></div>
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=2832&auto=format&fit=crop')] bg-cover bg-center rounded-xl md:rounded-2xl shadow-xl transform -rotate-1"></div>
-              </motion.div>
+                <div
+                  className="absolute inset-0 bg-cover bg-center rounded-xl md:rounded-2xl shadow-xl transform -rotate-1"
+                  style={{ backgroundImage: `url(${home3})` }}
+                ></div>              </motion.div>
             </div>
 
             {/* Right Column - Services List */}
