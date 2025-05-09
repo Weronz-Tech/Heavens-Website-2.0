@@ -132,7 +132,7 @@ const PropertyDetails = () => {
                                 </button>
 
                                 {/* Dropdown */}
-                                <div className="absolute right-0 mt-2 w-64 bg-cream-50 rounded-xl shadow-md border border-[#631930] ring-[#631930] ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-20 overflow-hidden">
+                                <div className="absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-md border border-[#631930] ring-[#631930] ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-20 overflow-hidden">
                                     <div className="py-2 px-3">
                                         <button
                                             onClick={() =>

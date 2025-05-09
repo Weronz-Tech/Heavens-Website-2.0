@@ -3,33 +3,31 @@ import { XMarkIcon, ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/so
 import { useState, useEffect } from 'react';
 import CTA from '../components/CTA';
 import SEO from '../components/SEO';
+import galleries from '../utils/galleries';
 
 const ImageGallery = () => {
-    const galleries = {
-        moments: [
-            { id: 1, src: 'https://i.pinimg.com/1200x/66/2c/de/662cde61ec3f2d0d9fe1dfb24752b7a0.jpg', caption: "Community celebrations" },
-            { id: 2, src: 'https://i.pinimg.com/1200x/e6/e9/b9/e6e9b9fdfeff9f7df592ca9e6536c21b.jpg', caption: "Festive gatherings" },
-            { id: 3, src: 'https://i.pinimg.com/1200x/9f/2e/53/9f2e536f715ab684eaaf3fc153784e9e.jpg', caption: "Shared meals" },
-            { id: 4, src: 'https://i.pinimg.com/1200x/4c/29/00/4c2900c41ea2d4d3c0f2da8cc4fa6893.jpg', caption: "Recreational activities" },
-            { id: 5, src: 'https://i.pinimg.com/1200x/39/14/64/3914640839f31b30a16106ef73183e6f.jpg', caption: "Outdoor events" },
-            { id: 6, src: 'https://i.pinimg.com/1200x/79/b2/58/79b258ca9311a36ef73399665cc1af4f.jpg', caption: "Cultural programs" }
-        ],
-        wellness: [
-            { id: 1, src: 'https://i.pinimg.com/1200x/b2/92/fa/b292fa95375196285699ace8ce160d43.jpg', caption: "Yoga sessions" },
-            { id: 2, src: 'https://i.pinimg.com/1200x/5f/19/45/5f19456ccf462467bdffab5100eed0fb.jpg', caption: "Meditation circle" },
-            { id: 3, src: 'https://i.pinimg.com/1200x/1b/ce/ba/1bceba89f6558e8b0506819bbe246f61.jpg', caption: "Fitness activities" },
-            { id: 4, src: 'https://i.pinimg.com/1200x/1c/51/27/1c5127b9eba90a8f582e38bafd072d34.jpg', caption: "Nutrition workshops" },
-            { id: 5, src: 'https://i.pinimg.com/1200x/34/63/1b/34631b313f845edf8ec8e78ac1fac19e.jpg', caption: "Wellness retreats" },
-            { id: 6, src: 'https://i.pinimg.com/1200x/11/f6/64/11f664848a0304276c146f57db6c43b1.jpg', caption: "Mindfulness programs" }
-        ]
-    };
+    // Separate promotional images (sunpack posters) from regular gallery images
+    const promotionalImages = galleries.promotions || [];
+    const galleryImages = [...galleries.moments, ...galleries.wellness, ...galleries.events];
+    const allImages = [...promotionalImages, ...galleryImages];
 
-    const allImages = [...galleries.moments, ...galleries.wellness];
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isOpen, setIsOpen] = useState(false);
-    const [direction, setDirection] = useState(0); // 0: initial, 1: next, -1: prev
+    const [direction, setDirection] = useState(0);
+    const [activeCategory, setActiveCategory] = useState('all');
 
     const currentImage = allImages[currentIndex];
+
+    // Filter images based on active category
+    const getFilteredImages = () => {
+        switch (activeCategory) {
+            case 'events': return galleries.events;
+            case 'moments': return galleries.moments;
+            case 'wellness': return galleries.wellness;
+            case 'promotions': return promotionalImages;
+            default: return galleryImages;
+        }
+    };
 
     const openLightbox = (index) => {
         setCurrentIndex(index);
@@ -51,7 +49,6 @@ const ImageGallery = () => {
         setCurrentIndex(index);
     };
 
-    // Handle keyboard navigation
     useEffect(() => {
         if (!isOpen) return;
 
@@ -65,7 +62,6 @@ const ImageGallery = () => {
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [isOpen, currentIndex]);
 
-    // Swipe gestures for mobile
     const [touchStart, setTouchStart] = useState(0);
     const [touchEnd, setTouchEnd] = useState(0);
 
@@ -78,15 +74,93 @@ const ImageGallery = () => {
     };
 
     const handleTouchEnd = () => {
-        if (touchStart - touchEnd > 50) {
-            goNext();
-        }
-        if (touchStart - touchEnd < -50) {
-            goPrev();
-        }
+        if (touchStart - touchEnd > 50) goNext();
+        if (touchStart - touchEnd < -50) goPrev();
+    };
+
+    const PromotionalCarousel = () => {
+        const [currentPromoIndex, setCurrentPromoIndex] = useState(0);
+
+        useEffect(() => {
+            if (promotionalImages.length > 1) {
+                const interval = setInterval(() => {
+                    setCurrentPromoIndex(prev => (prev + 1) % promotionalImages.length);
+                }, 5000);
+                return () => clearInterval(interval);
+            }
+        }, [promotionalImages.length]);
+
+        if (promotionalImages.length === 0) return null;
+
+        return (
+            <div className="relative mb-16 overflow-hidden rounded-xl shadow-xl bg-black">
+                <div className="relative h-64 md:h-96 w-full flex items-center justify-center">
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={currentPromoIndex}
+                            className="w-full h-full flex items-center justify-center"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.5 }}
+                        >
+                            {/* Mobile: Show full image with possible empty space */}
+                            <img
+                                src={promotionalImages[currentPromoIndex].src}
+                                alt={promotionalImages[currentPromoIndex].caption}
+                                className="w-full h-full object-contain md:hidden"
+                            />
+
+                            {/* Desktop: Show full height but limit width to maintain proportions */}
+                            <img
+                                src={promotionalImages[currentPromoIndex].src}
+                                alt={promotionalImages[currentPromoIndex].caption}
+                                className="hidden md:block h-full w-auto max-w-full"
+                                style={{
+                                    objectFit: 'contain'
+                                }}
+                            />
+                        </motion.div>
+                    </AnimatePresence>
+
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                        <h3 className="text-white text-xl md:text-2xl font-medium">
+                            {promotionalImages[currentPromoIndex].caption}
+                        </h3>
+                    </div>
+
+                    {promotionalImages.length > 1 && (
+                        <>
+                            <button
+                                onClick={() => setCurrentPromoIndex(prev => (prev - 1 + promotionalImages.length) % promotionalImages.length)}
+                                className="absolute left-4 p-2 rounded-full bg-black/30 text-white hover:bg-black/50 transition-all"
+                            >
+                                <ArrowLeftIcon className="w-6 h-6" />
+                            </button>
+                            <button
+                                onClick={() => setCurrentPromoIndex(prev => (prev + 1) % promotionalImages.length)}
+                                className="absolute right-4 p-2 rounded-full bg-black/30 text-white hover:bg-black/50 transition-all"
+                            >
+                                <ArrowRightIcon className="w-6 h-6" />
+                            </button>
+                            <div className="absolute bottom-4 right-4 flex space-x-2">
+                                {promotionalImages.map((_, index) => (
+                                    <button
+                                        key={index}
+                                        onClick={() => setCurrentPromoIndex(index)}
+                                        className={`w-2 h-2 rounded-full transition-all ${index === currentPromoIndex ? 'bg-white w-6' : 'bg-white/50'}`}
+                                    />
+                                ))}
+                            </div>
+                        </>
+                    )}
+                </div>
+            </div>
+        );
     };
 
     const renderGallerySection = (title, images, startIndexOffset) => {
+        const isEventsSection = title === 'Festive Cheer & Lasting Bonds';
         const isLivingWellSection = title === 'Living well, every step of the way';
         const isGlimpseSection = title === 'A Glimpse Into Our Beautiful Spaces';
 
@@ -117,6 +191,11 @@ const ImageGallery = () => {
                             <span className="italic text-[#631930] font-serif">Beautiful</span>{' '}
                             <span>Spaces</span>
                         </>
+                    ) : isEventsSection ? (
+                        <>
+                            <span className="italic text-[#631930] font-serif">Festive Cheer</span> &{' '}
+                            <span className="italic text-[#631930] font-serif">Lasting Bonds</span>
+                        </>
                     ) : (
                         <span className="text-[#631930]">{title}</span>
                     )}
@@ -128,7 +207,7 @@ const ImageGallery = () => {
                             key={`${title}-${item.id}`}
                             className="relative group overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
                             onClick={() => openLightbox(startIndexOffset + index)}
-
+                            initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.3, delay: index * 0.05 }}
                         >
@@ -153,13 +232,49 @@ const ImageGallery = () => {
     return (
         <>
             <div className="min-h-screen bg-[#faf6f2] pt-20 pb-16 px-4 sm:px-6">
-                {/* Moments Section */}
-                {renderGallerySection('Living well, every step of the way', galleries.moments, 0)}
+                {/* Promotional Carousel */}
+                <PromotionalCarousel />
 
-                {/* Wellness Section */}
-                {renderGallerySection('A Glimpse Into Our Beautiful Spaces', galleries.wellness, galleries.moments.length)}
+                {/* Category Filter */}
+                <div className="flex flex-wrap justify-center gap-4 mb-12">
+                    <button
+                        onClick={() => setActiveCategory('all')}
+                        className={`px-6 py-2 rounded-full transition-all ${activeCategory === 'all' ? 'bg-[#631930] text-white' : 'bg-white text-gray-700 hover:bg-gray-100'}`}
+                    >
+                        All
+                    </button>
+                    <button
+                        onClick={() => setActiveCategory('moments')}
+                        className={`px-6 py-2 rounded-full transition-all ${activeCategory === 'moments' ? 'bg-[#631930] text-white' : 'bg-white text-gray-700 hover:bg-gray-100'}`}
+                    >
+                        Living Well
+                    </button>
+                    <button
+                        onClick={() => setActiveCategory('wellness')}
+                        className={`px-6 py-2 rounded-full transition-all ${activeCategory === 'wellness' ? 'bg-[#631930] text-white' : 'bg-white text-gray-700 hover:bg-gray-100'}`}
+                    >
+                        Our Spaces
+                    </button>
+                    <button
+                        onClick={() => setActiveCategory('events')}
+                        className={`px-6 py-2 rounded-full transition-all ${activeCategory === 'events' ? 'bg-[#631930] text-white' : 'bg-white text-gray-700 hover:bg-gray-100'}`}
+                    >
+                        Events
+                    </button>
+                </div>
 
-                {/* Lightbox Modal */}
+                {/* Render appropriate gallery based on active category */}
+                {activeCategory === 'all' && (
+                    <>
+                        {renderGallerySection('Festive Cheer & Lasting Bonds', galleries.events, promotionalImages.length + galleries.moments.length + galleries.wellness.length)}
+                        {renderGallerySection('Living well, every step of the way', galleries.moments, promotionalImages.length)}
+                        {renderGallerySection('A Glimpse Into Our Beautiful Spaces', galleries.wellness, promotionalImages.length + galleries.moments.length)}
+                    </>
+                )}
+                {activeCategory === 'events' && renderGallerySection('Festive Cheer & Lasting Bonds', galleries.events, 0)}
+                {activeCategory === 'moments' && renderGallerySection('Living well, every step of the way', galleries.moments, 0)}
+                {activeCategory === 'wellness' && renderGallerySection('A Glimpse Into Our Beautiful Spaces', galleries.wellness, 0)}
+
                 <AnimatePresence custom={direction}>
                     {isOpen && (
                         <motion.div

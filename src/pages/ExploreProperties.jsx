@@ -127,7 +127,7 @@ const ExploreProperties = () => {
             location: "Bangalore, Karnataka",
             description: "Flora Inn blends timeless aesthetics with modern essentials—designed for students and professionals seeking a stylish, peaceful, and connected place to live",
             imageUrl: explore1,
-            amenities: ["Customized Rooms", "Healthy Food", "Fitness Center", "24*7 Gate Open"],
+            amenities: ["Customized Rooms", "Daily Meals", "Work Area", "Gym"],
             price: 6500,
             preferredBy: 'boys'
         },
@@ -137,7 +137,7 @@ const ExploreProperties = () => {
             location: "Bangalore, Karnataka",
             description: "Bloom Inn redefines modern living with effortless elegance—a harmonious blend of style, comfort, and convenience designed for students and professionals seeking a refined retreat.",
             imageUrl: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2980&q=80",
-            amenities: ["Fully Furnished Rooms", "Free Wi-Fi", "CCTV", "Security", "Laundrette"],
+            amenities: ["Fully Furnished Rooms", "Free Wi-Fi", "CCTV", "Security"],
             price: 6500,
             preferredBy: 'girls'
         }

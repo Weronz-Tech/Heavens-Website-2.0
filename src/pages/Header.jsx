@@ -8,6 +8,7 @@ import app4 from "../assets/images/app4.jpg";
 import home1 from "../assets/images/home1.jpg";
 import home2 from "../assets/images/home2.jpg";
 import home3 from "../assets/images/home3.jpg";
+import home4 from "../assets/images/home4.jpg";
 import life1 from "../assets/images/life1.jpg";
 import life2 from "../assets/images/life2.jpg";
 import life3 from "../assets/images/life3.jpg";
@@ -421,7 +422,7 @@ const Header = () => {
                   viewport={{ once: true }}
                 >
                   <img
-                    src="https://img.freepik.com/free-photo/indian-thali-traditional-food_466689-76204.jpg?w=1380"
+                    src={home4}
                     alt="Homestyle Food"
                     className="w-full h-full object-cover"
                   />
